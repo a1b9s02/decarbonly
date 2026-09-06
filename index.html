@@ -357,78 +357,157 @@
         </div>
 
         <!-- Right: Visual -->
-<div class="hidden lg:flex items-center justify-center animate-fade-in-up [animation-delay:200ms] w-full">
-  <div class="float-svg w-full max-w-xl xl:max-w-2xl">
-    <svg viewBox="-10 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto overflow-visible">
-      <defs>
-        <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#E2DFD6" stroke-width="0.5"/>
-        </pattern>
-        <radialGradient id="glow-india" cx="30%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#00C070" stop-opacity="0.12"/>
-          <stop offset="100%" stop-color="#00C070" stop-opacity="0"/>
-        </radialGradient>
-        <radialGradient id="glow-eu" cx="70%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.10"/>
-          <stop offset="100%" stop-color="#4F46E5" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
+<div class="hidden lg:flex items-center justify-center animate-fade-in-up [animation-delay:200ms] scale-110 lg:scale-125 origin-center">
 
-      <rect x="-10" y="0" width="500" height="400" fill="url(#grid)"/>
-      <ellipse cx="144" cy="200" rx="110" ry="110" fill="url(#glow-india)"/>
-      <ellipse cx="336" cy="200" rx="110" ry="110" fill="url(#glow-eu)"/>
+          <div class="float-svg w-full max-w-md">
 
-      <line x1="174" y1="200" x2="306" y2="200" stroke="#00C070" stroke-width="1.5" class="flow-line" opacity="0.5"/>
-      <line x1="174" y1="165" x2="306" y2="135" stroke="#00C070" stroke-width="1" class="flow-line" opacity="0.3"/>
-      <line x1="174" y1="235" x2="306" y2="265" stroke="#4F46E5" stroke-width="1" class="flow-line-rev" opacity="0.3"/>
+            <svg viewBox="0 0 480 400" fill="none" xmlns="http://www.w3.org/2000/svg">
 
-      <circle cx="120" cy="145" r="42" fill="white" stroke="#00C070" stroke-width="1.5"/>
-      <circle cx="120" cy="145" r="38" fill="#F0FDF7"/>
-      <text x="120" y="138" text-anchor="middle" font-family="Playfair Display, serif" font-size="13" font-weight="700" fill="#006640">CCTS</text>
-      <text x="120" y="154" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="9" fill="#6B7A6F">Carbon Credits</text>
+              <defs>
 
-      <circle cx="96" cy="270" r="34" fill="white" stroke="#00C070" stroke-width="1.5"/>
-      <circle cx="96" cy="270" r="30" fill="#F0FDF7"/>
-      <text x="96" y="265" text-anchor="middle" font-family="Playfair Display, serif" font-size="12" font-weight="700" fill="#006640">BRSR</text>
-      <text x="96" y="278" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="8" fill="#6B7A6F">ESG Reporting</text>
+                <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
 
-      <circle cx="240" cy="200" r="58" fill="white" stroke="#E2DFD6" stroke-width="1"/>
-      <circle cx="240" cy="200" r="50" fill="white" stroke="#00C070" stroke-width="2"/>
-      <circle cx="240" cy="200" r="42" fill="#F0FDF7"/>
-      <text x="229" y="196" font-family="Source Sans 3, sans-serif" font-size="22" font-weight="700" fill="#0D0F0D">d</text>
-      <text x="246" y="196" font-family="Source Sans 3, sans-serif" font-size="22" font-weight="700" fill="#0D0F0D">c</text>
-      <circle cx="268" cy="192" r="5" fill="#00C070"/>
-      <text x="240" y="213" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="8" fill="#6B7A6F">decarbonly</text>
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#E2DFD6" stroke-width="0.5"/>
 
-      <circle cx="358" cy="145" r="42" fill="white" stroke="#4F46E5" stroke-width="1.5"/>
-      <circle cx="358" cy="145" r="38" fill="#F0F0FF"/>
-      <text x="358" y="138" text-anchor="middle" font-family="Playfair Display, serif" font-size="13" font-weight="700" fill="#3730A3">CBAM</text>
-      <text x="358" y="154" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="9" fill="#6B7A6F">Border Carbon</text>
+                </pattern>
 
-      <circle cx="382" cy="270" r="34" fill="white" stroke="#4F46E5" stroke-width="1.5"/>
-      <circle cx="382" cy="270" r="30" fill="#F0F0FF"/>
-      <text x="382" y="265" text-anchor="middle" font-family="Playfair Display, serif" font-size="12" font-weight="700" fill="#3730A3">CSRD</text>
-      <text x="382" y="278" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="8" fill="#6B7A6F">EU Reporting</text>
+                <radialGradient id="glow-india" cx="30%" cy="50%" r="50%">
 
-      <line x1="155" y1="162" x2="195" y2="185" stroke="#00C070" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
-      <line x1="126" y1="238" x2="194" y2="215" stroke="#00C070" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
-      <line x1="322" y1="162" x2="285" y2="185" stroke="#4F46E5" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
-      <line x1="352" y1="240" x2="286" y2="215" stroke="#4F46E5" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+                  <stop offset="0%" stop-color="#00C070" stop-opacity="0.12"/>
 
-      <rect x="5" y="185" width="54" height="20" rx="4" fill="#0D0F0D"/>
-      <text x="32" y="199" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="9" font-weight="600" fill="white">India</text>
-      <rect x="421" y="185" width="54" height="20" rx="4" fill="#3730A3"/>
-      <text x="448" y="199" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="9" font-weight="600" fill="white">Europe</text>
+                  <stop offset="100%" stop-color="#00C070" stop-opacity="0"/>
 
-      <circle r="4" fill="#00C070" opacity="0.8">
-        <animateMotion dur="2.5s" repeatCount="indefinite" path="M174,200 L306,200"/>
-      </circle>
-      <circle r="3" fill="#4F46E5" opacity="0.8">
-        <animateMotion dur="2.5s" begin="1.25s" repeatCount="indefinite" path="M306,200 L174,200"/>
-      </circle>
-    </svg>
+                </radialGradient>
+
+                <radialGradient id="glow-eu" cx="70%" cy="50%" r="50%">
+
+                  <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.10"/>
+
+                  <stop offset="100%" stop-color="#4F46E5" stop-opacity="0"/>
+
+                </radialGradient>
+
+              </defs>
+
+
+
+              <rect width="480" height="400" fill="url(#grid)"/>
+
+              <ellipse cx="144" cy="200" rx="110" ry="110" fill="url(#glow-india)"/>
+
+              <ellipse cx="336" cy="200" rx="110" ry="110" fill="url(#glow-eu)"/>
+
+
+
+              <line x1="174" y1="200" x2="306" y2="200" stroke="#00C070" stroke-width="1.5" class="flow-line" opacity="0.5"/>
+
+              <line x1="174" y1="165" x2="306" y2="135" stroke="#00C070" stroke-width="1" class="flow-line" opacity="0.3"/>
+
+              <line x1="174" y1="235" x2="306" y2="265" stroke="#4F46E5" stroke-width="1" class="flow-line-rev" opacity="0.3"/>
+
+
+
+              <circle cx="120" cy="145" r="42" fill="white" stroke="#00C070" stroke-width="1.5"/>
+
+              <circle cx="120" cy="145" r="38" fill="#F0FDF7"/>
+
+              <text x="120" y="138" text-anchor="middle" font-family="Playfair Display, serif" font-size="13" font-weight="700" fill="#006640">CCTS</text>
+
+              <text x="120" y="154" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="9" fill="#6B7A6F">Carbon Credits</text>
+
+
+
+              <circle cx="96" cy="270" r="34" fill="white" stroke="#00C070" stroke-width="1.5"/>
+
+              <circle cx="96" cy="270" r="30" fill="#F0FDF7"/>
+
+              <text x="96" y="265" text-anchor="middle" font-family="Playfair Display, serif" font-size="12" font-weight="700" fill="#006640">BRSR</text>
+
+              <text x="96" y="278" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="8" fill="#6B7A6F">ESG Reporting</text>
+
+
+
+              <circle cx="240" cy="200" r="58" fill="white" stroke="#E2DFD6" stroke-width="1"/>
+
+              <circle cx="240" cy="200" r="50" fill="white" stroke="#00C070" stroke-width="2"/>
+
+              <circle cx="240" cy="200" r="42" fill="#F0FDF7"/>
+
+              <text x="229" y="196" font-family="Source Sans 3, sans-serif" font-size="22" font-weight="700" fill="#0D0F0D">d</text>
+
+              <text x="246" y="196" font-family="Source Sans 3, sans-serif" font-size="22" font-weight="700" fill="#0D0F0D">c</text>
+
+              <circle cx="268" cy="192" r="5" fill="#00C070"/>
+
+              <text x="240" y="213" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="8" fill="#6B7A6F">decarbonly</text>
+
+
+
+              <circle cx="358" cy="145" r="42" fill="white" stroke="#4F46E5" stroke-width="1.5"/>
+
+              <circle cx="358" cy="145" r="38" fill="#F0F0FF"/>
+
+              <text x="358" y="138" text-anchor="middle" font-family="Playfair Display, serif" font-size="13" font-weight="700" fill="#3730A3">CBAM</text>
+
+              <text x="358" y="154" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="9" fill="#6B7A6F">Border Carbon</text>
+
+
+
+              <circle cx="382" cy="270" r="34" fill="white" stroke="#4F46E5" stroke-width="1.5"/>
+
+              <circle cx="382" cy="270" r="30" fill="#F0F0FF"/>
+
+              <text x="382" y="265" text-anchor="middle" font-family="Playfair Display, serif" font-size="12" font-weight="700" fill="#3730A3">CSRD</text>
+
+              <text x="382" y="278" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="8" fill="#6B7A6F">EU Reporting</text>
+
+
+
+              <line x1="155" y1="162" x2="195" y2="185" stroke="#00C070" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+
+              <line x1="126" y1="238" x2="194" y2="215" stroke="#00C070" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+
+              <line x1="322" y1="162" x2="285" y2="185" stroke="#4F46E5" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+
+              <line x1="352" y1="240" x2="286" y2="215" stroke="#4F46E5" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
+
+
+
+              <rect x="5" y="185" width="54" height="20" rx="4" fill="#0D0F0D"/>
+
+              <text x="32" y="199" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="9" font-weight="600" fill="white">India</text>
+
+              <rect x="421" y="185" width="54" height="20" rx="4" fill="#3730A3"/>
+
+              <text x="448" y="199" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="9" font-weight="600" fill="white">Europe</text>
+
+
+
+              <circle r="4" fill="#00C070" opacity="0.8">
+
+                <animateMotion dur="2.5s" repeatCount="indefinite" path="M174,200 L306,200"/>
+
+              </circle>
+
+              <circle r="3" fill="#4F46E5" opacity="0.8">
+
+                <animateMotion dur="2.5s" begin="1.25s" repeatCount="indefinite" path="M306,200 L174,200"/>
+
+              </circle>
+
+            </svg>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
-</div>
+
+
 
   <!-- DEADLINE SECTION -->
   <div class="bg-white py-20 md:py-28 border-b border-brand-border">
