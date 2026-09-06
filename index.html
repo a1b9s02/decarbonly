@@ -76,6 +76,61 @@
       background-color: #121614;
       color: #F3F4F6;
     }
+    :root {
+  --bg-white: #FFFFFF;
+  --bg-section: #F8FAFC;
+  --text-dark: #0F172A;
+  --accent-green: #059669;
+  --border-light: #E2E8F0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-light);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-section {
+  background-color: var(--bg-section);
+  padding: 4rem 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  border-radius: 8px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.05);
+}
   </style>
 </head>
 <body class="bg-brand-black text-brand-textLight selection:bg-brand-green selection:text-brand-black">
