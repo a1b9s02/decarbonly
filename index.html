@@ -176,6 +176,23 @@
     transform: translateY(0);
   }
 </style>
+<!-- Entrance Animations -->
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+</style>
 </head>
 
 <body class="bg-brand-bg text-brand-text selection:bg-brand-greenLight selection:text-brand-greenDark">
@@ -304,7 +321,7 @@
             <span class="w-1.5 h-1.5 rounded-full bg-brand-green inline-block"></span>
             Carbon and ESG Intelligence for India
           </div>
-          <h1 class="headline-font text-5xl sm:text-6xl lg:text-7xl font-extrabold text-brand-text leading-[1.06] tracking-tight mb-6">
+          <h1 class="headline-font text-5xl sm:text-6xl lg:text-7xl font-extrabold text-brand-text leading-[1.06] tracking-tight mb-6 animate-fade-in-up">
             Your regulations<br>are clear.<br>
             <span class="text-brand-green">Your data is not.</span>
           </h1>
@@ -340,7 +357,7 @@
         </div>
 
         <!-- Right: Visual -->
-        <div class="hidden lg:flex items-center justify-center">
+        <div class="hidden lg:flex items-center justify-center animate-fade-in-up [animation-delay:200ms] scale-110 lg:scale-125 origin-center">
           <div class="float-svg w-full max-w-md">
             <svg viewBox="0 0 480 400" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
