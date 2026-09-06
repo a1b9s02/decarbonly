@@ -50,45 +50,6 @@
   </script>
 
   <style>
-    <!-- Custom CSS Animations & Keyframes -->
-<style>
-  /* Ambient floating motion */
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-  }
-
-  /* Glowing hover effect */
-  @keyframes glow {
-    0%, 100% { box-shadow: 0 0 12px rgba(0, 192, 112, 0.2); }
-    50% { box-shadow: 0 0 24px rgba(0, 192, 112, 0.6); }
-  }
-
-  /* Classes to apply animations */
-  .animate-float {
-    animation: float 4s ease-in-out infinite;
-  }
-
-  .hover-glow {
-    transition: all 0.3s ease;
-  }
-
-  .hover-glow:hover {
-    animation: glow 2s infinite;
-  }
-
-  /* Base state for scroll-reveal items */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
     body {
       font-family: 'Source Sans 3', sans-serif;
       background-color: #FFFFFF;
