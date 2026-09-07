@@ -3,16 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Decarbonly - Carbon and ESG Intelligence for India</title>
-  <meta name="description" content="Decarbonly helps Indian companies navigate CCTS, BRSR, CBAM and CSRD compliance, combining European regulatory expertise with Indian market precision to make your climate data accurate, auditable, and ready.">
-  <meta property="og:title" content="Decarbonly: Bridging India and Europe on Carbon and ESG Compliance">
-  <meta property="og:description" content="From India's CCTS and BRSR mandates to Europe's CBAM and CSRD requirements: Decarbonly is the advisory and intelligence platform that connects both worlds.">
-  <meta property="og:url" content="https://www.decarbonly.com">
-  <meta property="og:type" content="website">
-<link rel="icon" type="image/png" href="favicon.png">
+  <title>Decarbonly - Carbon & ESG Intelligence for India & Cross-Border Compliance</title>
+  <meta name="description" content="Decarbonly helps Indian companies and European importers navigate CCTS, BRSR, CBAM, and CSRD compliance with European regulatory experience and Indian market precision.">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -59,32 +55,31 @@
     .page-view { display: none; }
     .page-view.active { display: block; }
 
-    /* Dropdown */
+    /* Dropdown Styling */
     .dropdown-wrapper { position: relative; }
     .dropdown-menu {
       display: none;
       position: absolute;
-      top: calc(100% + 12px);
+      top: calc(100% + 8px);
       left: 50%;
       transform: translateX(-50%);
-      background: #fff;
+      background: #ffffff;
       border: 1px solid #E2DFD6;
       border-radius: 12px;
       padding: 8px;
-      min-width: 240px;
-      box-shadow: 0 16px 48px rgba(0,0,0,0.10);
+      min-width: 260px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.12);
       z-index: 200;
     }
     .dropdown-wrapper:hover .dropdown-menu { display: block; }
-    .dropdown-menu.open { display: block; }
     .dropdown-menu a {
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 10px 14px;
+      padding: 9px 12px;
       border-radius: 8px;
-      font-size: 14px;
-      font-weight: 500;
+      font-size: 13.5px;
+      font-weight: 600;
       color: #4A5850;
       transition: all 0.15s;
       text-decoration: none;
@@ -94,484 +89,383 @@
       color: #00C070;
     }
     .dropdown-menu a .dd-icon {
-      width: 28px; height: 28px;
+      width: 26px; height: 26px;
       border-radius: 6px;
       background: #E6F9F0;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
-    .dropdown-arrow { transition: transform 0.2s; }
-    .dropdown-wrapper:hover .dropdown-arrow { transform: rotate(180deg); }
 
-    /* Animated nodes in hero SVG */
+    /* Animated SVG & Flow */
     @keyframes pulse-node { 0%,100%{opacity:0.6;r:4} 50%{opacity:1;r:5.5} }
-    @keyframes flow {
-      0%   { stroke-dashoffset: 40; }
-      100% { stroke-dashoffset: 0; }
-    }
+    @keyframes flow { 0% { stroke-dashoffset: 40; } 100% { stroke-dashoffset: 0; } }
     .flow-line { stroke-dasharray: 8 4; animation: flow 2s linear infinite; }
     .flow-line-rev { stroke-dasharray: 8 4; animation: flow 2s linear infinite reverse; }
     @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
     .float-svg { animation: float 4s ease-in-out infinite; }
 
-    /* Form fields */
+    /* Inputs & Selects */
     input, select, textarea {
       background-color: #fff;
       border: 1px solid #E2DFD6;
       color: #0D0F0D;
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 0.75rem 1rem;
       width: 100%;
       outline: none;
-      transition: border-color 0.2s ease;
+      transition: all 0.2s ease;
       font-family: 'Source Sans 3', sans-serif;
     }
-    input:focus, select:focus, textarea:focus { border-color: #00C070; box-shadow: 0 0 0 3px rgba(0,192,112,0.12); }
-    input::placeholder, textarea::placeholder { color: #9CAA9F; }
-    select option { background: #fff; color: #0D0F0D; }
+    input:focus, select:focus, textarea:focus {
+      border-color: #00C070;
+      box-shadow: 0 0 0 3px rgba(0,192,112,0.12);
+    }
 
-    /* Stat counter strip */
-    .stat-strip { border-top: 1px solid #E2DFD6; border-bottom: 1px solid #E2DFD6; }
-
-    /* Card hover lift */
     .card-lift { transition: transform 0.22s ease, box-shadow 0.22s ease; }
-    .card-lift:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .card-lift:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.06); }
+
+    /* Sector tabs */
+    .sector-btn.active {
+      background-color: #00C070;
+      color: #FFFFFF;
+      border-color: #00C070;
+    }
+    .cat-btn.active {
+      background-color: #00C070;
+      color: #FFFFFF;
+    }
   </style>
-  <!-- Custom CSS Animations & Keyframes -->
-<style>
-  /* Ambient floating motion */
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-  }
-
-  /* Glowing hover effect */
-  @keyframes glow {
-    0%, 100% { box-shadow: 0 0 12px rgba(0, 192, 112, 0.2); }
-    50% { box-shadow: 0 0 24px rgba(0, 192, 112, 0.6); }
-  }
-
-  /* Classes to apply animations */
-  .animate-float {
-    animation: float 4s ease-in-out infinite;
-  }
-
-  .hover-glow {
-    transition: all 0.3s ease;
-  }
-
-  .hover-glow:hover {
-    animation: glow 2s infinite;
-  }
-
-  /* Base state for scroll-reveal items */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-<!-- Entrance Animations -->
-<style>
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-</style>
 </head>
 
 <body class="bg-brand-bg text-brand-text selection:bg-brand-greenLight selection:text-brand-greenDark">
 
 <!-- ================================================================
-     NAVIGATION
+     HEADER / NAVIGATION
 ================================================================ -->
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-brand-border">
   <div class="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between" style="height:72px;">
 
     <!-- Logo -->
-    <a href="#home" class="flex items-center gap-3 group" data-page="home">
-      <img src="favicon.png" alt="Logo" class="w-8 h-8 transition-transform group-hover:scale-105 object-contain">
-      <span class="headline-font text-xl font-bold tracking-tight text-brand-text">
+    <a href="#home" class="flex items-center gap-3 group" onclick="navigateTo('home')">
+      <img src="favicon.png" alt="Decarbonly" class="w-8 h-8 transition-transform group-hover:scale-105 object-contain" onerror="this.style.display='none'">
+      <span class="headline-font text-2xl font-bold tracking-tight text-brand-text">
         <span class="text-brand-green">De</span>carbonly
       </span>
     </a>
 
-    <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-2 text-sm font-medium">
-      <a href="#home" class="nav-btn px-4 py-2 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bgAlt transition-all" data-page="home">Home</a>
-      <a href="#about" class="nav-btn px-4 py-2 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bgAlt transition-all" data-page="about">About</a>
-
-      <!-- Solutions dropdown -->
+    <!-- Navigation Links -->
+    <nav class="hidden lg:flex items-center gap-1 text-sm font-medium">
+      <a href="#home" class="nav-btn px-3 py-2 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bgAlt transition-all" data-page="home" onclick="navigateTo('home')">Home</a>
+      
+      <!-- Solutions Dropdown -->
       <div class="dropdown-wrapper">
-        <button class="nav-btn flex items-center gap-1.5 px-4 py-2 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bgAlt transition-all" data-page="solutions" onclick="toggleDropdown(event)">
+        <a href="#solutions" class="nav-btn flex items-center gap-1 px-3 py-2 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bgAlt transition-all" data-page="solutions" onclick="navigateTo('solutions')">
           Solutions
-          <svg class="dropdown-arrow w-4 h-4 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-        <div class="dropdown-menu" id="solutionsMenu">
-          <div style="padding:4px 14px 8px;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#9CAA9F;">Our Solutions</div>
-          <a href="#solution-cbam" onclick="closeDropdown()">
-            <span class="dd-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C070" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </span>
-            CBAM Support
-          </a>
-          <a href="#solution-brsr" onclick="closeDropdown()">
-            <span class="dd-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C070" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
-            </span>
-            BRSR Reporting
-          </a>
-          <a href="#solution-ccts" onclick="closeDropdown()">
-            <span class="dd-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C070" stroke-width="2"><path d="M12 2a7 7 0 100 14A7 7 0 0012 2z"/><path d="M12 8v4l3 3"/></svg>
-            </span>
-            CCTS Compliance
-          </a>
-          <a href="#solution-esg" onclick="closeDropdown()">
-            <span class="dd-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C070" stroke-width="2"><path d="M3 3h18v18H3z" rx="2"/><path d="M8 17V9M12 17v-5M16 17v-8"/></svg>
-            </span>
-            ESG Reporting &amp; Solutions
-          </a>
-          <a href="#solution-education" onclick="closeDropdown()">
-            <span class="dd-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00C070" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.5 4 3 6 3s6-1.5 6-3v-5"/></svg>
-            </span>
-            Carbon Market Education
-          </a>
+          <svg class="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+        <div class="dropdown-menu">
+          <div class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-brand-muted">Compliance Advisory</div>
+          <a href="#solutions" onclick="navigateTo('solutions', 'solution-cbam')"><span class="dd-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C070" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span> CBAM Support</a>
+          <a href="#solutions" onclick="navigateTo('solutions', 'solution-ccts')"><span class="dd-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C070" stroke-width="2"><path d="M12 2a7 7 0 100 14A7 7 0 0012 2z"/><path d="M12 8v4l3 3"/></svg></span> CCTS Compliance</a>
+          <a href="#solutions" onclick="navigateTo('solutions', 'solution-brsr')"><span class="dd-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C070" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg></span> BRSR Reporting</a>
+          <a href="#solutions" onclick="navigateTo('solutions', 'solution-esg')"><span class="dd-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C070" stroke-width="2"><path d="M3 3h18v18H3z" rx="2"/><path d="M8 17V9M12 17v-5M16 17v-8"/></svg></span> ESG &amp; CSRD</a>
+          <a href="#solutions" onclick="navigateTo('solutions', 'solution-education')"><span class="dd-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00C070" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.5 4 3 6 3s6-1.5 6-3v-5"/></svg></span> Carbon Market Education</a>
         </div>
       </div>
 
-      <a href="#blog" class="nav-btn px-4 py-2 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bgAlt transition-all" data-page="blog">Blog</a>
-      <a href="#contact" class="nav-btn px-4 py-2 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bgAlt transition-all" data-page="contact">Contact</a>
+      <!-- Sectors Dropdown -->
+      <div class="dropdown-wrapper">
+        <a href="#sectors" class="nav-btn flex items-center gap-1 px-3 py-2 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bgAlt transition-all" data-page="sectors" onclick="navigateTo('sectors')">
+          Sectors
+          <svg class="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+        <div class="dropdown-menu">
+          <div class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-brand-muted">Industrial Coverage</div>
+          <a href="#sectors" onclick="navigateToSector('cement')"><span class="dd-icon">🏢</span> Cement</a>
+          <a href="#sectors" onclick="navigateToSector('steel')"><span class="dd-icon">🏗️</span> Steel</a>
+          <a href="#sectors" onclick="navigateToSector('aluminium')"><span class="dd-icon">⚡</span> Aluminium</a>
+          <a href="#sectors" onclick="navigateToSector('fertilisers')"><span class="dd-icon">🌱</span> Fertilisers</a>
+          <a href="#sectors" onclick="navigateToSector('textiles')"><span class="dd-icon">🧵</span> Textiles</a>
+          <a href="#sectors" onclick="navigateToSector('petrochemicals')"><span class="dd-icon">🧪</span> Petrochemicals</a>
+        </div>
+      </div>
+
+      <!-- Resources Dropdown -->
+      <div class="dropdown-wrapper">
+        <a href="#resources" class="nav-btn flex items-center gap-1 px-3 py-2 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bgAlt transition-all" data-page="resources" onclick="navigateTo('resources')">
+          Resources
+          <svg class="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+        <div class="dropdown-menu">
+          <div class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-brand-muted">Intelligence &amp; Tools</div>
+          <a href="#resources" onclick="navigateTo('resources', 'res-guides')"><span class="dd-icon">📘</span> Free CBAM Guide</a>
+          <a href="#resources" onclick="navigateTo('resources', 'res-guides')"><span class="dd-icon">📊</span> CCTS Primer</a>
+          <a href="#resources" onclick="navigateTo('resources', 'res-guides')"><span class="dd-icon">📋</span> BRSR Checklist</a>
+          <a href="#resources" onclick="navigateTo('resources', 'res-calendar')"><span class="dd-icon">📅</span> Regulatory Calendar</a>
+          <a href="#resources" onclick="navigateTo('resources', 'res-faq')"><span class="dd-icon">❓</span> Compliance FAQ</a>
+        </div>
+      </div>
+
+      <a href="#blog" class="nav-btn px-3 py-2 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bgAlt transition-all" data-page="blog" onclick="navigateTo('blog')">Insights</a>
+      <a href="#about" class="nav-btn px-3 py-2 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bgAlt transition-all" data-page="about" onclick="navigateTo('about')">About</a>
+      <a href="#contact" class="nav-btn px-3 py-2 rounded-lg text-brand-muted hover:text-brand-text hover:bg-brand-bgAlt transition-all" data-page="contact" onclick="navigateTo('contact')">Contact</a>
     </nav>
 
-    <div class="hidden md:flex items-center gap-3">
-      <a href="https://www.linkedin.com/company/decarbonly/" target="_blank" rel="noopener noreferrer" class="p-2 text-brand-muted hover:text-brand-green transition-colors" title="Follow us on LinkedIn">
-        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-        </svg>
-      </a>
-      <a href="#contact" class="text-sm font-semibold text-brand-muted hover:text-brand-text transition-colors">hello@decarbonly.com</a>
-      <a href="#contact" class="bg-brand-green hover:bg-brand-greenHover text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-all shadow-sm">
+    <!-- Header Actions -->
+    <div class="hidden lg:flex items-center gap-4">
+      <a href="mailto:hello@decarbonly.com" class="text-xs font-semibold text-brand-muted hover:text-brand-text transition-colors">hello@decarbonly.com</a>
+      <a href="#contact" onclick="navigateTo('contact')" class="bg-brand-green hover:bg-brand-greenHover text-white font-bold text-sm px-5 py-2.5 rounded-lg transition-all shadow-sm">
         Talk to us
       </a>
     </div>
 
-    <button onclick="toggleMobileMenu()" class="md:hidden text-brand-text focus:outline-none">
+    <!-- Mobile Hamburger -->
+    <button onclick="toggleMobileMenu()" class="lg:hidden text-brand-text focus:outline-none p-2">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
     </button>
   </div>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-brand-border px-6 py-6 space-y-1">
-    <a href="#home" class="block px-3 py-2.5 rounded-lg text-brand-text hover:bg-brand-bgAlt font-medium">Home</a>
-    <a href="#about" class="block px-3 py-2.5 rounded-lg text-brand-text hover:bg-brand-bgAlt font-medium">About</a>
-    <div class="px-3 py-2 text-xs font-bold uppercase tracking-wider text-brand-muted mt-2">Solutions</div>
-    <a href="#solution-cbam" class="block px-5 py-2 rounded-lg text-brand-muted hover:bg-brand-bgAlt hover:text-brand-green">CBAM Support</a>
-    <a href="#solution-brsr" class="block px-5 py-2 rounded-lg text-brand-muted hover:bg-brand-bgAlt hover:text-brand-green">BRSR Reporting</a>
-    <a href="#solution-ccts" class="block px-5 py-2 rounded-lg text-brand-muted hover:bg-brand-bgAlt hover:text-brand-green">CCTS Compliance</a>
-    <a href="#solution-esg" class="block px-5 py-2 rounded-lg text-brand-muted hover:bg-brand-bgAlt hover:text-brand-green">ESG Reporting &amp; Solutions</a>
-    <a href="#solution-education" class="block px-5 py-2 rounded-lg text-brand-muted hover:bg-brand-bgAlt hover:text-brand-green">Carbon Market Education</a>
-    <a href="#blog" class="block px-3 py-2.5 rounded-lg text-brand-text hover:bg-brand-bgAlt font-medium">Blog</a>
-    <a href="#contact" class="block px-3 py-2.5 rounded-lg text-brand-text hover:bg-brand-bgAlt font-medium">Contact</a>
-    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-brand-muted hover:text-brand-green font-medium">
-      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-      Follow on LinkedIn
-    </a>
-    <a href="#contact" class="block text-center bg-brand-green text-white font-semibold py-3 rounded-lg mt-4">Talk to us</a>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-brand-border px-6 py-6 space-y-3">
+    <a href="#home" onclick="navigateTo('home'); toggleMobileMenu()" class="block font-semibold text-brand-text">Home</a>
+    <a href="#solutions" onclick="navigateTo('solutions'); toggleMobileMenu()" class="block font-semibold text-brand-text">Solutions</a>
+    <a href="#sectors" onclick="navigateTo('sectors'); toggleMobileMenu()" class="block font-semibold text-brand-text">Sectors</a>
+    <a href="#resources" onclick="navigateTo('resources'); toggleMobileMenu()" class="block font-semibold text-brand-text">Resources</a>
+    <a href="#blog" onclick="navigateTo('blog'); toggleMobileMenu()" class="block font-semibold text-brand-text">Insights</a>
+    <a href="#about" onclick="navigateTo('about'); toggleMobileMenu()" class="block font-semibold text-brand-text">About</a>
+    <a href="#contact" onclick="navigateTo('contact'); toggleMobileMenu()" class="block font-semibold text-brand-text">Contact</a>
+    <a href="#contact" onclick="navigateTo('contact'); toggleMobileMenu()" class="block text-center bg-brand-green text-white font-bold py-3 rounded-lg">Talk to us</a>
   </div>
 </header>
-
 
 <main id="app-content">
 
 <!-- ================================================================
-     PAGE: HOME
+     PAGE 1: HOME
 ================================================================ -->
 <section id="page-home" class="page-view active">
 
-  <!-- HERO -->
-  <div class="bg-white pt-12 pb-8 md:pt-20 md:pb-16 border-b border-brand-border overflow-hidden">
+  <!-- Section 1: Hero -->
+  <div class="bg-white pt-12 pb-12 md:pt-20 md:pb-16 border-b border-brand-border overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-        <!-- Left: Text -->
         <div>
-          <div class="inline-flex items-center gap-2 bg-brand-greenLight text-brand-greenDark text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider mb-6">
-            <span class="w-1.5 h-1.5 rounded-full bg-brand-green inline-block"></span>
+          <div class="inline-flex items-center gap-2 bg-brand-greenLight text-brand-greenDark text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-6">
+            <span class="w-2 h-2 rounded-full bg-brand-green inline-block animate-pulse"></span>
             Carbon and ESG Intelligence for India
           </div>
-          <h1 class="headline-font text-5xl sm:text-6xl lg:text-7xl font-extrabold text-brand-text leading-[1.06] tracking-tight mb-6 animate-fade-in-up">
-            Your regulations<br>are clear.<br>
-            <span class="text-brand-green">Your data is not.</span>
+          <h1 class="headline-font text-5xl sm:text-6xl lg:text-7xl font-extrabold text-brand-text leading-[1.06] tracking-tight mb-6">
+            Your regulations are clear.<br>
+            <span class="text-brand-green">Your data is not.</span><br>
+            We fix that.
           </h1>
-          <p class="text-lg text-brand-muted max-w-xl leading-relaxed mb-8 animate-fade-in-up">
-            Decarbonly helps Indian companies navigate the full spectrum of carbon and ESG compliance, from India's CCTS and BRSR mandates to Europe's CBAM, CSRD, and the expanding wave of cross-border climate regulations. European regulatory experience. Indian market precision. One platform.
+          <p class="text-lg text-brand-muted max-w-xl leading-relaxed mb-8">
+            Decarbonly helps Indian companies navigate the full spectrum of carbon and ESG compliance — from India's CCTS and BRSR mandates to Europe's CBAM, CSRD, and the expanding wave of cross-border climate regulations. European regulatory experience. Indian market precision. One platform.
           </p>
-          <div class="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center mb-10">
-            <a href="#contact" class="bg-brand-green hover:bg-brand-greenHover text-white font-bold text-base px-8 py-4 rounded-lg transition-all text-center shadow-sm">
+          <div class="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
+            <a href="#contact" onclick="navigateTo('contact')" class="bg-brand-green hover:bg-brand-greenHover text-white font-bold text-base px-8 py-4 rounded-lg transition-all text-center shadow-sm">
               Talk to us
             </a>
-            <button onclick="openModal('guide-modal')" class="border border-brand-border hover:border-brand-green text-brand-text font-medium text-base px-8 py-4 rounded-lg transition-all text-center hover:bg-brand-bgAlt">
+            <button onclick="openModal('guide-modal')" class="border border-brand-border hover:border-brand-green text-brand-text font-semibold text-base px-8 py-4 rounded-lg transition-all text-center hover:bg-brand-bgAlt">
               Download free CBAM guide
             </button>
           </div>
-
-          <!-- Stat strip -->
-          <div class="stat-strip py-5 flex flex-wrap gap-8">
-            <div>
-              <div class="headline-font text-3xl font-bold text-brand-text">490+</div>
-              <div class="text-xs text-brand-muted mt-0.5">CCTS obligated facilities</div>
-            </div>
-            <div class="w-px bg-brand-border self-stretch"></div>
-            <div>
-              <div class="headline-font text-3xl font-bold text-brand-text">1,000</div>
-              <div class="text-xs text-brand-muted mt-0.5">Companies under BRSR assurance</div>
-            </div>
-            <div class="w-px bg-brand-border self-stretch"></div>
-            <div>
-              <div class="headline-font text-3xl font-bold text-brand-text">Sep '27</div>
-              <div class="text-xs text-brand-muted mt-0.5">First CBAM declaration deadline</div>
-            </div>
-          </div>
         </div>
 
-        
-      <!-- Right: Visual -->
-<div class="hidden lg:flex items-center justify-center animate-fade-in-up [animation-delay:200ms] scale-110 lg:scale-125 origin-center">
-
+        <!-- Right Visual: Animated India-EU Network -->
+        <div class="flex items-center justify-center">
           <div class="float-svg w-full max-w-md">
-
             <svg viewBox="0 0 480 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-
               <defs>
-
                 <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#E2DFD6" stroke-width="0.5"/>
-
+                  <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#E2DFD6" stroke-width="0.5"/>
                 </pattern>
-
                 <radialGradient id="glow-india" cx="30%" cy="50%" r="50%">
-
-                  <stop offset="0%" stop-color="#00C070" stop-opacity="0.12"/>
-
+                  <stop offset="0%" stop-color="#00C070" stop-opacity="0.15"/>
                   <stop offset="100%" stop-color="#00C070" stop-opacity="0"/>
-
                 </radialGradient>
-
                 <radialGradient id="glow-eu" cx="70%" cy="50%" r="50%">
-
-                  <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.10"/>
-
+                  <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.12"/>
                   <stop offset="100%" stop-color="#4F46E5" stop-opacity="0"/>
-
                 </radialGradient>
-
               </defs>
 
-
-
               <rect width="480" height="400" fill="url(#grid)"/>
-
               <ellipse cx="144" cy="200" rx="110" ry="110" fill="url(#glow-india)"/>
-
               <ellipse cx="336" cy="200" rx="110" ry="110" fill="url(#glow-eu)"/>
 
-
-
-              <line x1="174" y1="200" x2="306" y2="200" stroke="#00C070" stroke-width="1.5" class="flow-line" opacity="0.5"/>
-
+              <line x1="174" y1="200" x2="306" y2="200" stroke="#00C070" stroke-width="1.5" class="flow-line" opacity="0.6"/>
               <line x1="174" y1="165" x2="306" y2="135" stroke="#00C070" stroke-width="1" class="flow-line" opacity="0.3"/>
-
               <line x1="174" y1="235" x2="306" y2="265" stroke="#4F46E5" stroke-width="1" class="flow-line-rev" opacity="0.3"/>
 
-
-
               <circle cx="120" cy="145" r="42" fill="white" stroke="#00C070" stroke-width="1.5"/>
-
               <circle cx="120" cy="145" r="38" fill="#F0FDF7"/>
-
               <text x="120" y="138" text-anchor="middle" font-family="Playfair Display, serif" font-size="13" font-weight="700" fill="#006640">CCTS</text>
-
               <text x="120" y="154" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="9" fill="#6B7A6F">Carbon Credits</text>
 
-
-
               <circle cx="96" cy="270" r="34" fill="white" stroke="#00C070" stroke-width="1.5"/>
-
               <circle cx="96" cy="270" r="30" fill="#F0FDF7"/>
-
               <text x="96" y="265" text-anchor="middle" font-family="Playfair Display, serif" font-size="12" font-weight="700" fill="#006640">BRSR</text>
-
-              <text x="96" y="278" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="8" fill="#6B7A6F">ESG Reporting</text>
-
-
-
-              <circle cx="240" cy="200" r="58" fill="white" stroke="#E2DFD6" stroke-width="1"/>
+              <text x="96" y="278" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="8" fill="#6B7A6F">ESG Disclosure</text>
 
               <circle cx="240" cy="200" r="50" fill="white" stroke="#00C070" stroke-width="2"/>
-
               <circle cx="240" cy="200" r="42" fill="#F0FDF7"/>
-
-              <text x="229" y="196" font-family="Source Sans 3, sans-serif" font-size="22" font-weight="700" fill="#0D0F0D">d</text>
-
-              <text x="246" y="196" font-family="Source Sans 3, sans-serif" font-size="22" font-weight="700" fill="#0D0F0D">c</text>
-
-              <circle cx="268" cy="192" r="5" fill="#00C070"/>
-
-              <text x="240" y="213" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="8" fill="#6B7A6F">decarbonly</text>
-
-
+              <text x="240" y="196" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="18" font-weight="800" fill="#0D0F0D"><tspan fill="#00C070">De</tspan>carbonly</text>
+              <text x="240" y="212" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="8" fill="#6B7A6F">Intelligence Hub</text>
 
               <circle cx="358" cy="145" r="42" fill="white" stroke="#4F46E5" stroke-width="1.5"/>
-
               <circle cx="358" cy="145" r="38" fill="#F0F0FF"/>
-
               <text x="358" y="138" text-anchor="middle" font-family="Playfair Display, serif" font-size="13" font-weight="700" fill="#3730A3">CBAM</text>
-
               <text x="358" y="154" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="9" fill="#6B7A6F">Border Carbon</text>
 
-
-
               <circle cx="382" cy="270" r="34" fill="white" stroke="#4F46E5" stroke-width="1.5"/>
-
               <circle cx="382" cy="270" r="30" fill="#F0F0FF"/>
-
               <text x="382" y="265" text-anchor="middle" font-family="Playfair Display, serif" font-size="12" font-weight="700" fill="#3730A3">CSRD</text>
-
               <text x="382" y="278" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="8" fill="#6B7A6F">EU Reporting</text>
 
-
-
-              <line x1="155" y1="162" x2="195" y2="185" stroke="#00C070" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
-
-              <line x1="126" y1="238" x2="194" y2="215" stroke="#00C070" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
-
-              <line x1="322" y1="162" x2="285" y2="185" stroke="#4F46E5" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
-
-              <line x1="352" y1="240" x2="286" y2="215" stroke="#4F46E5" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>
-
-
-
               <rect x="5" y="185" width="54" height="20" rx="4" fill="#0D0F0D"/>
-
               <text x="32" y="199" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="9" font-weight="600" fill="white">India</text>
-
               <rect x="421" y="185" width="54" height="20" rx="4" fill="#3730A3"/>
-
               <text x="448" y="199" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="9" font-weight="600" fill="white">Europe</text>
-
-
-
-              <circle r="4" fill="#00C070" opacity="0.8">
-
-                <animateMotion dur="2.5s" repeatCount="indefinite" path="M174,200 L306,200"/>
-
-              </circle>
-
-              <circle r="3" fill="#4F46E5" opacity="0.8">
-
-                <animateMotion dur="2.5s" begin="1.25s" repeatCount="indefinite" path="M306,200 L174,200"/>
-
-              </circle>
-
             </svg>
-
           </div>
-
         </div>
 
       </div>
-
     </div>
-
   </div>
 
+  <!-- Section 2: Live Intelligence Strip -->
+  <div class="bg-brand-black text-white py-3.5 border-b border-brand-darkBorder">
+    <div class="max-w-7xl mx-auto px-6 overflow-x-auto">
+      <div class="flex items-center justify-between min-w-[850px] text-xs space-x-6">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-brand-green animate-ping"></span>
+          <span class="text-brand-muted uppercase tracking-wider font-bold">Live Compliance Signals:</span>
+        </div>
+        <div>EU ETS carbon price: <span class="font-bold text-white">€82.40/tonne</span></div>
+        <div class="h-3 w-px bg-brand-darkBorder"></div>
+        <div>India CCC estimated range: <span class="font-bold text-white">₹500–1,500/tonne</span></div>
+        <div class="h-3 w-px bg-brand-darkBorder"></div>
+        <div>CBAM first declaration: <span class="font-bold text-brand-green">September 2027</span></div>
+        <div class="h-3 w-px bg-brand-darkBorder"></div>
+        <div>CCTS trading: <span class="font-bold text-emerald-400">Live on IEX &amp; PXIL</span></div>
+        <div class="h-3 w-px bg-brand-darkBorder"></div>
+        <div>BRSR Core assurance: <span class="font-bold text-amber-400">FY2026-27 mandatory</span></div>
+        <div class="h-3 w-px bg-brand-darkBorder"></div>
+        <div class="text-brand-muted">Last updated: <span class="text-white font-medium">March 2026</span></div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Section 3: Dual-Path Value Proposition -->
+  <div class="bg-brand-bgAlt py-16 md:py-24 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Who we help</p>
+        <h2 class="headline-font text-3xl sm:text-5xl font-bold">Two markets. One platform.</h2>
+        <p class="text-brand-muted text-base mt-3">Decarbonly serves both sides of the India-Europe compliance conversation.</p>
+      </div>
 
-  <!-- DEADLINE SECTION -->
-  <div class="bg-white py-20 md:py-28 border-b border-brand-border">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Path 1: For Indian Exporters -->
+        <div class="bg-white border border-brand-border rounded-2xl p-8 hover:border-brand-green transition-all card-lift border-t-4 border-t-brand-green">
+          <div class="inline-block bg-brand-greenLight text-brand-greenDark font-bold text-xs px-3 py-1 rounded-full mb-4">Path 1</div>
+          <h3 class="headline-font text-2xl font-bold mb-4">For Indian Exporters and Industrial Enterprises</h3>
+          <div class="space-y-4 text-sm text-brand-muted mb-8">
+            <div>
+              <strong class="text-brand-text block text-base font-semibold mb-1">Protect your European revenue.</strong>
+              Accurately calculate and verify embedded emissions across steel, cement, aluminium, textiles, and manufacturing to prevent CBAM penalties and stay on your EU customer's preferred supplier list.
+            </div>
+            <div>
+              <strong class="text-brand-text block text-base font-semibold mb-1">Fulfill your domestic mandates.</strong>
+              Prepare assurance-ready BRSR Core disclosures and build long-term participation strategies for India's CCTS carbon market before the compliance window tightens.
+            </div>
+            <div>
+              <strong class="text-brand-text block text-base font-semibold mb-1">Audit-proof your operations.</strong>
+              Replace proxy estimates and spreadsheet guesses with verified, primary operational data structured to withstand European regulatory scrutiny and Indian verification requirements.
+            </div>
+          </div>
+          <a href="#solutions" onclick="navigateTo('solutions')" class="inline-block w-full text-center bg-brand-bgAlt hover:bg-brand-green hover:text-white text-brand-text font-bold py-3.5 rounded-lg border border-brand-border transition-all">
+            See solutions for Indian companies
+          </a>
+        </div>
+
+        <!-- Path 2: For European Importers -->
+        <div class="bg-white border border-brand-border rounded-2xl p-8 hover:border-indigo-500 transition-all card-lift border-t-4 border-t-indigo-600">
+          <div class="inline-block bg-indigo-50 text-indigo-700 font-bold text-xs px-3 py-1 rounded-full mb-4">Path 2</div>
+          <h3 class="headline-font text-2xl font-bold mb-4">For European Importers and Multinationals</h3>
+          <div class="space-y-4 text-sm text-brand-muted mb-8">
+            <div>
+              <strong class="text-brand-text block text-base font-semibold mb-1">De-risk your Indian supply chain.</strong>
+              Gather primary Scope 3 emissions data directly from your tier-1 and tier-2 Indian suppliers without compromising vendor confidentiality or overburdening your procurement relationships.
+            </div>
+            <div>
+              <strong class="text-brand-text block text-base font-semibold mb-1">Systematise your CSRD and CBAM filings.</strong>
+              Eliminate spreadsheet risk with standardised cross-border reporting mapped directly to EU regulatory taxonomies. Data that flows from source to declaration without manual rekeying.
+            </div>
+            <div>
+              <strong class="text-brand-text block text-base font-semibold mb-1">Local expertise. Global standards.</strong>
+              Combine ground-level intelligence in India's regulatory ecosystem with European compliance frameworks. We know what BEE requires and what Brussels expects. Simultaneously.
+            </div>
+          </div>
+          <a href="#solutions" onclick="navigateTo('solutions')" class="inline-block w-full text-center bg-brand-bgAlt hover:bg-indigo-600 hover:text-white text-brand-text font-bold py-3.5 rounded-lg border border-brand-border transition-all">
+            See solutions for European companies
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: The Four Deadlines -->
+  <div class="bg-white py-16 md:py-24 border-b border-brand-border">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
         <div>
-          <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-3">Why this matters now</p>
-          <h2 class="headline-font text-3xl sm:text-5xl font-bold leading-tight max-w-2xl">
-            The regulations are multiplying. The deadlines are fixed.
-          </h2>
+          <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Why this matters now</p>
+          <h2 class="headline-font text-3xl sm:text-5xl font-bold max-w-2xl">The regulations are clear. The deadlines are fixed.</h2>
         </div>
-        <p class="text-brand-muted text-base max-w-sm text-right">
-          The data gap is costing companies money right now.
-        </p>
+        <p class="text-brand-muted text-sm max-w-xs md:text-right">The compliance data gap is already costing unprepared companies market share and revenue.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-        <div class="card-lift bg-white border border-brand-border rounded-xl p-6 hover:border-brand-green">
-          <div class="flex items-center justify-between mb-5">
-            <span class="text-xs font-bold uppercase tracking-wider text-white bg-brand-green px-2.5 py-1 rounded-full">Live Now</span>
-            <span class="headline-font text-2xl font-bold text-brand-text">Oct '26</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-6 hover:border-brand-green transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase bg-brand-green text-white px-2.5 py-0.5 rounded-full">Live Now</span>
+            <span class="headline-font text-xl font-bold">Oct '26</span>
           </div>
-          <div class="w-10 h-10 bg-brand-greenLight rounded-lg flex items-center justify-center mb-4">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006640" stroke-width="2"><path d="M12 2a7 7 0 100 14A7 7 0 0012 2z"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <h3 class="headline-font text-xl font-bold mb-2 text-brand-text">CCTS Opens</h3>
-          <p class="text-sm text-brand-muted leading-relaxed">490+ facilities must measure, report, and trade carbon credits on Indian power exchanges.</p>
+          <h3 class="headline-font text-lg font-bold mb-2">CCTS Opens</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">490+ facilities must measure, report, and trade carbon credits on Indian power exchanges.</p>
         </div>
 
-        <div class="card-lift bg-white border border-brand-border rounded-xl p-6 hover:border-amber-400">
-          <div class="flex items-center justify-between mb-5">
-            <span class="text-xs font-bold uppercase tracking-wider text-white bg-amber-500 px-2.5 py-1 rounded-full">Mandatory</span>
-            <span class="headline-font text-2xl font-bold text-brand-text">FY'27</span>
+        <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-6 hover:border-amber-500 transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase bg-amber-500 text-white px-2.5 py-0.5 rounded-full">Mandatory</span>
+            <span class="headline-font text-xl font-bold">FY'27</span>
           </div>
-          <div class="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center mb-4">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#92400E" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
-          </div>
-          <h3 class="headline-font text-xl font-bold mb-2 text-brand-text">BRSR Assurance</h3>
-          <p class="text-sm text-brand-muted leading-relaxed">1,000 listed companies need third-party ESG assurance across 140+ disclosure indicators.</p>
+          <h3 class="headline-font text-lg font-bold mb-2">BRSR Assurance</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">Top 1,000 listed companies need third-party ESG assurance across 140+ disclosure indicators.</p>
         </div>
 
-        <div class="card-lift bg-white border border-brand-border rounded-xl p-6 hover:border-blue-400">
-          <div class="flex items-center justify-between mb-5">
-            <span class="text-xs font-bold uppercase tracking-wider text-white bg-blue-600 px-2.5 py-1 rounded-full">EU Deadline</span>
-            <span class="headline-font text-2xl font-bold text-brand-text">Sep '27</span>
+        <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-6 hover:border-blue-600 transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase bg-blue-600 text-white px-2.5 py-0.5 rounded-full">EU Mandatory</span>
+            <span class="headline-font text-xl font-bold">Sep '27</span>
           </div>
-          <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3 class="headline-font text-xl font-bold mb-2 text-brand-text">CBAM Declarations</h3>
-          <p class="text-sm text-brand-muted leading-relaxed">Indian exporters of steel, cement, aluminium and fertilisers must verify embedded carbon for EU customers.</p>
+          <h3 class="headline-font text-lg font-bold mb-2">CBAM Declaration</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">Indian exporters of steel, cement, aluminium &amp; fertilisers must verify embedded carbon.</p>
         </div>
 
-        <div class="card-lift bg-white border border-brand-border rounded-xl p-6 hover:border-purple-400">
-          <div class="flex items-center justify-between mb-5">
-            <span class="text-xs font-bold uppercase tracking-wider text-white bg-purple-600 px-2.5 py-1 rounded-full">Expanding</span>
-            <span class="headline-font text-2xl font-bold text-brand-text">FY'27</span>
+        <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-6 hover:border-purple-600 transition-all">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-bold uppercase bg-purple-600 text-white px-2.5 py-0.5 rounded-full">Scope Expansion</span>
+            <span class="headline-font text-xl font-bold">FY'27</span>
           </div>
-          <div class="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center mb-4">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B21B6" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <h3 class="headline-font text-xl font-bold mb-2 text-brand-text">CSRD Scope</h3>
-          <p class="text-sm text-brand-muted leading-relaxed">Indian multinationals with EU subsidiaries or significant EU revenue enter mandatory reporting scope.</p>
+          <h3 class="headline-font text-lg font-bold mb-2">CSRD Scope</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">Indian MNCs with EU subsidiaries or €450M+ EU revenue enter mandatory sustainability reporting.</p>
         </div>
       </div>
 
@@ -583,153 +477,377 @@
     </div>
   </div>
 
-  <!-- PROCESS VISUAL / HOW IT WORKS -->
-  <div class="bg-white py-20 md:py-28 border-b border-brand-border">
+  <!-- Section 5: Sector Exposure -->
+  <div class="bg-brand-bgAlt py-16 md:py-24 border-b border-brand-border">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-        <div>
-          <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-3">How it works</p>
-          <h2 class="headline-font text-3xl sm:text-5xl font-bold leading-tight max-w-xl">
-            From day one to full compliance.
-          </h2>
+      <div class="mb-12">
+        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Sector Depth</p>
+        <h2 class="headline-font text-3xl sm:text-5xl font-bold">Which sector are you in?</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Cement -->
+        <div class="bg-white border border-brand-border rounded-xl p-6 flex flex-col justify-between hover:border-brand-green transition-all card-lift">
+          <div>
+            <div class="text-2xl mb-3">🏢</div>
+            <h3 class="headline-font text-xl font-bold mb-2">Cement</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+              India's second largest industrial emitter. CCTS target: mandatory emission intensity reduction from facility baseline. CBAM exposure moderate and growing as EU coverage expands to cement derivatives.
+            </p>
+          </div>
+          <button onclick="navigateToSector('cement')" class="text-xs font-bold text-brand-green hover:text-brand-greenHover text-left flex items-center gap-1">
+            See how Decarbonly helps this sector &rarr;
+          </button>
         </div>
-        <p class="text-brand-muted text-base max-w-sm">
-          A structured 4-step framework to transition your compliance data from scattered to audit-ready.
-        </p>
+
+        <!-- Steel -->
+        <div class="bg-white border border-brand-border rounded-xl p-6 flex flex-col justify-between hover:border-brand-green transition-all card-lift">
+          <div>
+            <div class="text-2xl mb-3">🏗️</div>
+            <h3 class="headline-font text-xl font-bold mb-2">Steel</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+              India's largest CBAM-exposed export sector. BF-BOF route emission intensity 54% above EU benchmark. CBAM cost estimate: $69–173 per tonne of steel exported to EU by 2034.
+            </p>
+          </div>
+          <button onclick="navigateToSector('steel')" class="text-xs font-bold text-brand-green hover:text-brand-greenHover text-left flex items-center gap-1">
+            See how Decarbonly helps this sector &rarr;
+          </button>
+        </div>
+
+        <!-- Aluminium -->
+        <div class="bg-white border border-brand-border rounded-xl p-6 flex flex-col justify-between hover:border-brand-green transition-all card-lift">
+          <div>
+            <div class="text-2xl mb-3">⚡</div>
+            <h3 class="headline-font text-xl font-bold mb-2">Aluminium</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+              Electricity is everything. CBAM covers Scope 2 indirect emissions for aluminium. Coal-powered smelters face a $1,000+ per tonne CBAM penalty disadvantage versus hydro-powered competitors.
+            </p>
+          </div>
+          <button onclick="navigateToSector('aluminium')" class="text-xs font-bold text-brand-green hover:text-brand-greenHover text-left flex items-center gap-1">
+            See how Decarbonly helps this sector &rarr;
+          </button>
+        </div>
+
+        <!-- Fertilisers -->
+        <div class="bg-white border border-brand-border rounded-xl p-6 flex flex-col justify-between hover:border-brand-green transition-all card-lift">
+          <div>
+            <div class="text-2xl mb-3">🌱</div>
+            <h3 class="headline-font text-xl font-bold mb-2">Fertilisers</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+              86% of India's LNG sourced from West Asia. Ammonia and nitric acid subject to CBAM calculations. Green hydrogen transition is the long-term pathway, but HPO obligations land now.
+            </p>
+          </div>
+          <button onclick="navigateToSector('fertilisers')" class="text-xs font-bold text-brand-green hover:text-brand-greenHover text-left flex items-center gap-1">
+            See how Decarbonly helps this sector &rarr;
+          </button>
+        </div>
+
+        <!-- Textiles -->
+        <div class="bg-white border border-brand-border rounded-xl p-6 flex flex-col justify-between hover:border-brand-green transition-all card-lift">
+          <div>
+            <div class="text-2xl mb-3">🧵</div>
+            <h3 class="headline-font text-xl font-bold mb-2">Textiles</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+              In CCTS scope. BRSR assurance mandatory for listed textile mills. European fast fashion sustainability rules and EU Digital Product Passports creating intense supply chain pressure.
+            </p>
+          </div>
+          <button onclick="navigateToSector('textiles')" class="text-xs font-bold text-brand-green hover:text-brand-greenHover text-left flex items-center gap-1">
+            See how Decarbonly helps this sector &rarr;
+          </button>
+        </div>
+
+        <!-- Petrochemicals -->
+        <div class="bg-white border border-brand-border rounded-xl p-6 flex flex-col justify-between hover:border-brand-green transition-all card-lift">
+          <div>
+            <div class="text-2xl mb-3">🧪</div>
+            <h3 class="headline-font text-xl font-bold mb-2">Petrochemicals</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+              Complex CCTS boundary definitions. High EU export exposure in specialty chemicals. CSRD requirements for Indian MNCs operating European subsidiaries.
+            </p>
+          </div>
+          <button onclick="navigateToSector('petrochemicals')" class="text-xs font-bold text-brand-green hover:text-brand-greenHover text-left flex items-center gap-1">
+            See how Decarbonly helps this sector &rarr;
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 6: By The Numbers -->
+  <div class="bg-white py-16 md:py-24 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12">
+        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Financial Reality</p>
+        <h2 class="headline-font text-3xl sm:text-5xl font-bold">The cost of not having your data ready.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-8">
+          <div class="headline-font text-4xl sm:text-5xl font-extrabold text-brand-green mb-3">₹500–1,500</div>
+          <div class="font-bold text-brand-text text-base mb-2">Estimated CCC price range per tonne under CCTS.</div>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            <strong class="text-brand-text">What this means:</strong> A cement or steel plant generating a 100,000 tonne shortfall faces a <span class="font-semibold text-brand-text">₹5–15 crore</span> annual compliance bill on carbon power exchanges.
+          </p>
+        </div>
+
+        <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-8">
+          <div class="headline-font text-4xl sm:text-5xl font-extrabold text-brand-green mb-3">30–80%</div>
+          <div class="font-bold text-brand-text text-base mb-2">EU default CBAM markup vs actual emissions.</div>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            <strong class="text-brand-text">What this means:</strong> Indian exporters without verified primary data pay default values for emissions they never produced, making products uncompetitive in Europe.
+          </p>
+        </div>
+
+        <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-8">
+          <div class="headline-font text-4xl sm:text-5xl font-extrabold text-brand-green mb-3">2x</div>
+          <div class="font-bold text-brand-text text-base mb-2">CCTS non-compliance penalty multiplier.</div>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            <strong class="text-brand-text">What this means:</strong> Missing your intensity target and failing to purchase Carbon Credit Certificates on time doubles your compliance cost automatically.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 7: Solutions Overview -->
+  <div class="bg-brand-bgAlt py-16 md:py-24 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex justify-between items-end mb-12">
+        <div>
+          <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Core Practice Areas</p>
+          <h2 class="headline-font text-3xl sm:text-5xl font-bold">Solutions Overview</h2>
+        </div>
+        <a href="#solutions" onclick="navigateTo('solutions')" class="hidden sm:inline-block text-sm font-bold text-brand-green hover:underline">Explore all solutions &rarr;</a>
+      </div>
+
+      <div class="space-y-4">
+        <div onclick="navigateTo('solutions', 'solution-cbam')" class="bg-white border border-brand-border rounded-xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-brand-green cursor-pointer transition-all card-lift">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-brand-greenLight rounded-lg flex items-center justify-center text-brand-green font-bold">01</div>
+            <div>
+              <h3 class="headline-font text-lg font-bold">CBAM Support</h3>
+              <p class="text-xs text-brand-muted">Embedded carbon calculation, ISO 14065 verifier coordination, and EU customer data packages.</p>
+            </div>
+          </div>
+          <span class="text-xs font-bold text-brand-green">Learn more &rarr;</span>
+        </div>
+
+        <div onclick="navigateTo('solutions', 'solution-ccts')" class="bg-white border border-brand-border rounded-xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-brand-green cursor-pointer transition-all card-lift">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-brand-greenLight rounded-lg flex items-center justify-center text-brand-green font-bold">02</div>
+            <div>
+              <h3 class="headline-font text-lg font-bold">CCTS Compliance</h3>
+              <p class="text-xs text-brand-muted">GHG inventory, BEE MRV alignment, plant boundary definition, and trading strategy.</p>
+            </div>
+          </div>
+          <span class="text-xs font-bold text-brand-green">Learn more &rarr;</span>
+        </div>
+
+        <div onclick="navigateTo('solutions', 'solution-brsr')" class="bg-white border border-brand-border rounded-xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-brand-green cursor-pointer transition-all card-lift">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-brand-greenLight rounded-lg flex items-center justify-center text-brand-green font-bold">03</div>
+            <div>
+              <h3 class="headline-font text-lg font-bold">BRSR Reporting &amp; Core Assurance</h3>
+              <p class="text-xs text-brand-muted">Materiality mapping, 140+ indicator data architecture, and third-party audit preparation.</p>
+            </div>
+          </div>
+          <span class="text-xs font-bold text-brand-green">Learn more &rarr;</span>
+        </div>
+
+        <div onclick="navigateTo('solutions', 'solution-esg')" class="bg-white border border-brand-border rounded-xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-brand-green cursor-pointer transition-all card-lift">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-brand-greenLight rounded-lg flex items-center justify-center text-brand-green font-bold">04</div>
+            <div>
+              <h3 class="headline-font text-lg font-bold">ESG &amp; CSRD Solutions</h3>
+              <p class="text-xs text-brand-muted">Double materiality, Scope 3 supply chain mapping, and BRSR-to-CSRD transition frameworks.</p>
+            </div>
+          </div>
+          <span class="text-xs font-bold text-brand-green">Learn more &rarr;</span>
+        </div>
+
+        <div onclick="navigateTo('solutions', 'solution-education')" class="bg-white border border-brand-border rounded-xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-brand-green cursor-pointer transition-all card-lift">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-brand-greenLight rounded-lg flex items-center justify-center text-brand-green font-bold">05</div>
+            <div>
+              <h3 class="headline-font text-lg font-bold">Carbon Market Education</h3>
+              <p class="text-xs text-brand-muted">Executive training, cohort certifications, and practical workshops for leadership teams.</p>
+            </div>
+          </div>
+          <span class="text-xs font-bold text-brand-green">Learn more &rarr;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 8: How We Help — The Process -->
+  <div class="bg-white py-16 md:py-24 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12">
+        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Our Methodology</p>
+        <h2 class="headline-font text-3xl sm:text-5xl font-bold">From day one to full compliance.</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Step 1 -->
-        <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-6 hover:border-brand-green transition-all card-lift flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="w-10 h-10 rounded-xl bg-brand-greenLight text-brand-greenDark font-bold text-base flex items-center justify-center border border-brand-green/20">01</span>
-              <span class="text-xs font-bold text-brand-muted uppercase tracking-wider">Phase One</span>
-            </div>
-            <h3 class="headline-font text-xl font-bold text-brand-text mb-3">Understand</h3>
-            <p class="text-sm text-brand-muted leading-relaxed">
-              We assess where you stand: your data, your gaps, and your specific regulatory obligations across CCTS, BRSR, and CBAM.
-            </p>
-          </div>
+        <div class="bg-brand-bgAlt p-6 rounded-xl border border-brand-border">
+          <div class="text-brand-green font-extrabold text-2xl mb-3">01 / Understand</div>
+          <p class="text-xs text-brand-muted leading-relaxed">We assess where you stand: your sector, current data infrastructure, export exposure, and specific deadlines across CCTS, BRSR, or CBAM.</p>
         </div>
 
-        <!-- Step 2 -->
-        <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-6 hover:border-brand-green transition-all card-lift flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="w-10 h-10 rounded-xl bg-brand-greenLight text-brand-greenDark font-bold text-base flex items-center justify-center border border-brand-green/20">02</span>
-              <span class="text-xs font-bold text-brand-muted uppercase tracking-wider">Phase Two</span>
-            </div>
-            <h3 class="headline-font text-xl font-bold text-brand-text mb-3">Organise</h3>
-            <p class="text-sm text-brand-muted leading-relaxed">
-              We build your data infrastructure, including automated collection systems, calculation models, and verification documentation.
-            </p>
-          </div>
+        <div class="bg-brand-bgAlt p-6 rounded-xl border border-brand-border">
+          <div class="text-brand-green font-extrabold text-2xl mb-3">02 / Organise</div>
+          <p class="text-xs text-brand-muted leading-relaxed">We build your data architecture, establish calculation methodologies, gather primary operational metrics, and assemble audit evidence.</p>
         </div>
 
-        <!-- Step 3 -->
-        <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-6 hover:border-brand-green transition-all card-lift flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="w-10 h-10 rounded-xl bg-brand-greenLight text-brand-greenDark font-bold text-base flex items-center justify-center border border-brand-green/20">03</span>
-              <span class="text-xs font-bold text-brand-muted uppercase tracking-wider">Phase Three</span>
-            </div>
-            <h3 class="headline-font text-xl font-bold text-brand-text mb-3">Report</h3>
-            <p class="text-sm text-brand-muted leading-relaxed">
-              We prepare and submit verified compliance reports across MRV, BRSR Core, and CBAM declaration packages.
-            </p>
-          </div>
+        <div class="bg-brand-bgAlt p-6 rounded-xl border border-brand-border">
+          <div class="text-brand-green font-extrabold text-2xl mb-3">03 / Report</div>
+          <p class="text-xs text-brand-muted leading-relaxed">We prepare and submit verified compliance declarations, coordinate accredited third-party verification, and answer regulator inquiries.</p>
         </div>
 
-        <!-- Step 4 -->
-        <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-6 hover:border-brand-green transition-all card-lift flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-6">
-              <span class="w-10 h-10 rounded-xl bg-brand-greenLight text-brand-greenDark font-bold text-base flex items-center justify-center border border-brand-green/20">04</span>
-              <span class="text-xs font-bold text-brand-muted uppercase tracking-wider">Phase Four</span>
-            </div>
-            <h3 class="headline-font text-xl font-bold text-brand-text mb-3">Monitor</h3>
-            <p class="text-sm text-brand-muted leading-relaxed">
-              We keep your compliance current with annual updates, ongoing monitoring, and rapid adaptation to new regulatory changes.
-            </p>
-          </div>
+        <div class="bg-brand-bgAlt p-6 rounded-xl border border-brand-border">
+          <div class="text-brand-green font-extrabold text-2xl mb-3">04 / Monitor</div>
+          <p class="text-xs text-brand-muted leading-relaxed">We keep your compliance current as BEE, SEBI, and EU regulations evolve, ensuring your market position remains secure every year.</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- OUR EDGE -->
-  <div class="bg-brand-bgAlt py-20 md:py-28 border-b border-brand-border">
+  <!-- Section 9: Trust and Methodology Pillars -->
+  <div class="bg-brand-bgAlt py-16 md:py-24 border-b border-brand-border">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-3">Our edge</p>
-      <h2 class="headline-font text-3xl sm:text-5xl font-bold mb-14 max-w-2xl leading-tight">
-        We have sat on both sides of this table.
-      </h2>
+      <div class="max-w-2xl mb-12">
+        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">How We Work</p>
+        <h2 class="headline-font text-3xl sm:text-5xl font-bold">Methodology that holds up under scrutiny.</h2>
+        <p class="text-brand-muted text-sm mt-3">Compliance data that faces regulatory audit needs to be built the right way from the start. Here is how we build it.</p>
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="bg-white border border-brand-border rounded-xl p-8">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-8 h-8 rounded-lg bg-brand-greenLight flex items-center justify-center">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#006640" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
-            </div>
-            <h3 class="headline-font text-xl font-bold text-brand-text">In Europe</h3>
-          </div>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-2.5 text-sm text-brand-muted"><span class="text-brand-green mt-0.5 font-bold flex-shrink-0">&#10003;</span>Worked inside European companies: seen how they evaluate and replace suppliers on carbon data</li>
-            <li class="flex items-start gap-2.5 text-sm text-brand-muted"><span class="text-brand-green mt-0.5 font-bold flex-shrink-0">&#10003;</span>When your German customer sends a CBAM request, we know exactly what they expect</li>
-            <li class="flex items-start gap-2.5 text-sm text-brand-muted"><span class="text-brand-green mt-0.5 font-bold flex-shrink-0">&#10003;</span>When your intensity figures reach a European investor's ESG team, we know how they read them</li>
-          </ul>
+          <div class="w-10 h-10 rounded-lg bg-brand-greenLight flex items-center justify-center text-brand-green font-bold mb-4">🧠</div>
+          <h3 class="headline-font text-xl font-bold mb-2">Human Expertise First</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Every calculation, gap analysis, and filing strategy is governed by in-house carbon accountants and climate policy specialists. Never delegated to unverified scripts or automated outputs that cannot be explained to a verification body.
+          </p>
         </div>
+
         <div class="bg-white border border-brand-border rounded-xl p-8">
+          <div class="w-10 h-10 rounded-lg bg-brand-greenLight flex items-center justify-center text-brand-green font-bold mb-4">⚙️</div>
+          <h3 class="headline-font text-xl font-bold mb-2">Targeted, Pragmatic Technology</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            We use software selectively to remove tedious data-entry bottlenecks — reading utility bills, processing invoice formats, structuring large datasets. Core methodologies remain fully deterministic and auditable. Every number has a traceable source.
+          </p>
+        </div>
+
+        <div class="bg-white border border-brand-border rounded-xl p-8">
+          <div class="w-10 h-10 rounded-lg bg-brand-greenLight flex items-center justify-center text-brand-green font-bold mb-4">🔒</div>
+          <h3 class="headline-font text-xl font-bold mb-2">Vault-Grade Data Privacy</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Your operational and supply chain metrics are protected with enterprise-level isolation protocols. We never feed your proprietary data into public AI models or external third-party tools. Your competitive information stays yours.
+          </p>
+        </div>
+
+        <div class="bg-white border border-brand-border rounded-xl p-8">
+          <div class="w-10 h-10 rounded-lg bg-brand-greenLight flex items-center justify-center text-brand-green font-bold mb-4">📈</div>
+          <h3 class="headline-font text-xl font-bold mb-2">Advisory-Led, Platform-Ready</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Receive high-touch, hands-on consulting from day one, supported by a growing digital infrastructure that scales with your ongoing compliance roadmap. The rigour of a specialist advisor with the efficiency of a platform.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 10: Our Edge -->
+  <div class="bg-white py-16 md:py-24 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12">
+        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Our Edge</p>
+        <h2 class="headline-font text-3xl sm:text-5xl font-bold">We have sat on both sides of this table.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-8">
           <div class="flex items-center gap-3 mb-6">
-            <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"/><path d="M1 21h22"/><path d="M9 7h1"/><path d="M9 11h1"/><path d="M9 15h1"/><path d="M14 7h1"/><path d="M14 11h1"/><path d="M14 15h1"/></svg>
-            </div>
-            <h3 class="headline-font text-xl font-bold text-brand-text">In India</h3>
+            <span class="text-2xl">🇪🇺</span>
+            <h3 class="headline-font text-xl font-bold">In Europe</h3>
           </div>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-2.5 text-sm text-brand-muted"><span class="text-brand-green mt-0.5 font-bold flex-shrink-0">&#10003;</span>Understand how hard it is to trace and structure emissions data inside Indian industrial facilities</li>
-            <li class="flex items-start gap-2.5 text-sm text-brand-muted"><span class="text-brand-green mt-0.5 font-bold flex-shrink-0">&#10003;</span>Know the BRSR framework deeply: how it maps to CSRD and where the real gaps are</li>
-            <li class="flex items-start gap-2.5 text-sm text-brand-muted"><span class="text-brand-green mt-0.5 font-bold flex-shrink-0">&#10003;</span>Have worked through complex CCTS calculations and BEE methodology in practice</li>
+          <ul class="space-y-3 text-xs text-brand-muted">
+            <li class="flex items-start gap-2"><span class="text-brand-green font-bold">✓</span> Worked inside European companies: seen how they evaluate and replace suppliers on carbon data.</li>
+            <li class="flex items-start gap-2"><span class="text-brand-green font-bold">✓</span> When your German customer sends a CBAM request, we know exactly what format they expect.</li>
+            <li class="flex items-start gap-2"><span class="text-brand-green font-bold">✓</span> When your intensity figures reach a European investor's ESG team, we know how they evaluate them.</li>
+          </ul>
+        </div>
+
+        <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="text-2xl">🇮🇳</span>
+            <h3 class="headline-font text-xl font-bold">In India</h3>
+          </div>
+          <ul class="space-y-3 text-xs text-brand-muted">
+            <li class="flex items-start gap-2"><span class="text-brand-green font-bold">✓</span> Understand how hard it is to trace and structure emissions data inside Indian industrial facilities.</li>
+            <li class="flex items-start gap-2"><span class="text-brand-green font-bold">✓</span> Know the BRSR framework deeply: how it maps to CSRD and where the real operational gaps are.</li>
+            <li class="flex items-start gap-2"><span class="text-brand-green font-bold">✓</span> Have worked through complex CCTS calculations and BEE methodology in practical plant settings.</li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- TRANSFORMATION (dark accent section) -->
-  <div class="bg-brand-black py-20 md:py-28 border-b border-brand-darkBorder">
+  <!-- Section 11: Transformation Outcomes -->
+  <div class="bg-brand-black text-white py-16 md:py-24 border-b border-brand-darkBorder">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-3">One year with Decarbonly</p>
-      <h2 class="headline-font text-3xl sm:text-5xl font-bold text-white mb-12 max-w-xl leading-tight">
-        From compliance chaos to competitive advantage.
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-brand-darkCard border border-brand-darkBorder rounded-xl p-8 hover:border-brand-green transition-all">
-          <div class="headline-font text-5xl font-bold text-white/10 mb-4">01</div>
-          <h3 class="headline-font text-xl font-bold text-white mb-3">Your data is clean.</h3>
-          <p class="text-sm text-brand-muted leading-relaxed">Accurate, structured, auditable. Ready for any verifier, any regulator, any investor who asks for it.</p>
+      <div class="max-w-2xl mb-12">
+        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">One Year With Decarbonly</p>
+        <h2 class="headline-font text-3xl sm:text-5xl font-bold">Transformation Outcomes</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-brand-darkCard border border-brand-darkBorder rounded-xl p-8">
+          <div class="headline-font text-4xl font-bold text-brand-green mb-3">01</div>
+          <h3 class="headline-font text-xl font-bold mb-2">Your data is clean.</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">Accurate, structured, auditable. Ready for any verifier, any regulator, or any European customer who asks for it.</p>
         </div>
-        <div class="bg-brand-darkCard border border-brand-darkBorder rounded-xl p-8 hover:border-brand-green transition-all">
-          <div class="headline-font text-5xl font-bold text-white/10 mb-4">02</div>
-          <h3 class="headline-font text-xl font-bold text-white mb-3">You avoided the penalties.</h3>
-          <p class="text-sm text-brand-muted leading-relaxed">Non-compliance costs multiples of what advisory costs. We make sure you never find out the hard way.</p>
+
+        <div class="bg-brand-darkCard border border-brand-darkBorder rounded-xl p-8">
+          <div class="headline-font text-4xl font-bold text-brand-green mb-3">02</div>
+          <h3 class="headline-font text-xl font-bold mb-2">You avoided penalties.</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">Non-compliance costs multiples of what advisory costs. We ensure you never pay default CBAM penalties or CCTS multipliers.</p>
         </div>
-        <div class="bg-brand-darkCard border border-brand-darkBorder rounded-xl p-8 hover:border-brand-green transition-all">
-          <div class="headline-font text-5xl font-bold text-white/10 mb-4">03</div>
-          <h3 class="headline-font text-xl font-bold text-white mb-3">The next regulation does not scare you.</h3>
-          <p class="text-sm text-brand-muted leading-relaxed">Because you have the infrastructure, knowledge, and processes to handle what comes next.</p>
+
+        <div class="bg-brand-darkCard border border-brand-darkBorder rounded-xl p-8">
+          <div class="headline-font text-4xl font-bold text-brand-green mb-3">03</div>
+          <h3 class="headline-font text-xl font-bold mb-2">Next regulation is easy.</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">Because you have the underlying data infrastructure, methodologies, and internal processes ready for whatever comes next.</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- CTA BAND -->
-  <div class="bg-brand-green py-16 md:py-20">
+  <!-- Section 12: Newsletter Signup -->
+  <div class="bg-brand-bgAlt py-16 md:py-20 border-b border-brand-border">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="headline-font text-3xl sm:text-5xl font-bold text-white mb-4">The deadline does not move.</h2>
-      <p class="text-white/80 text-lg mb-8 max-w-md mx-auto">Talk to us before your first compliance date lands. First conversation is free.</p>
-      <a href="#contact" class="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-brand-greenDark font-bold text-base px-8 py-4 rounded-lg transition-all shadow-sm">
-        Book a free call &rarr;
+      <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Regulatory Intelligence Briefing</p>
+      <h2 class="headline-font text-3xl sm:text-4xl font-bold mb-4">The Decarbonly Brief</h2>
+      <p class="text-brand-muted text-sm max-w-2xl mx-auto mb-8 leading-relaxed">
+        One email. Every two weeks. What changed in India's carbon and ESG compliance landscape — and what it means for your business. CCTS price movements, BEE notifications, CBAM implementation updates, and BRSR amendments. Written for CFOs, sustainability heads, and compliance teams who need to act on it.
+      </p>
+
+      <form onsubmit="handleSubscribe(event)" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 mb-4">
+        <input type="email" required placeholder="Enter your work email" class="flex-1">
+        <button type="submit" class="bg-brand-green hover:bg-brand-greenHover text-white font-bold px-6 py-3 rounded-lg transition-all flex-shrink-0">
+          Subscribe
+        </button>
+      </form>
+      <p class="text-[11px] text-brand-muted">Independent research. No sponsored content. No investment advice. Unsubscribe anytime.</p>
+    </div>
+  </div>
+
+  <!-- Section 13: CTA Band -->
+  <div class="bg-brand-green text-white py-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="headline-font text-3xl sm:text-5xl font-bold mb-4">The deadline does not move.</h2>
+      <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">Talk to us before your first compliance date lands. First 30-minute scoping call is free.</p>
+      <a href="#contact" onclick="navigateTo('contact')" class="inline-block bg-white text-brand-greenDark hover:bg-brand-bgAlt font-bold text-base px-8 py-4 rounded-lg transition-all shadow-sm">
+        Talk to us
       </a>
     </div>
   </div>
@@ -738,107 +856,346 @@
 
 
 <!-- ================================================================
-     PAGE: ABOUT
+     PAGE 2: ABOUT
 ================================================================ -->
 <section id="page-about" class="page-view">
 
-  <div class="bg-white py-20 md:py-28 border-b border-brand-border">
+  <!-- Hero -->
+  <div class="bg-white py-16 md:py-24 border-b border-brand-border">
     <div class="max-w-7xl mx-auto px-6">
       <div class="max-w-3xl">
-        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-4">Who we are</p>
-        <h1 class="headline-font text-4xl sm:text-6xl font-bold text-brand-text max-w-3xl mb-8 leading-tight">
-          Built at the intersection of two regulatory worlds.
-        </h1>
-        <p class="text-lg text-brand-muted leading-relaxed">
-          Decarbonly was built from a specific vantage point: deep inside the European sustainable finance and climate regulation landscape (EU ETS, CSRD, CBAM, SFDR) with one eye always on India's rapidly evolving compliance market.
+        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Our Story</p>
+        <h1 class="headline-font text-4xl sm:text-6xl font-bold mb-6">Built at the intersection of two regulatory worlds.</h1>
+        <p class="text-brand-muted text-base sm:text-lg leading-relaxed mb-4">
+          Decarbonly was built from a specific vantage point: deep inside the European sustainable finance and climate regulation landscape — EU ETS, CSRD, CBAM, SFDR — with one eye always on India's rapidly evolving compliance market.
         </p>
-        <p class="text-lg text-brand-muted leading-relaxed mt-4">
-          That position, understanding what European regulators demand and what Indian companies need to deliver, is not something you build in a classroom. It comes from working on both sides of the transaction.
+        <p class="text-brand-muted text-base sm:text-lg leading-relaxed">
+          That position is not something you build in a classroom. It comes from working on both sides of the transaction: understanding what European regulators and customers demand, and knowing how Indian industrial facilities actually operate.
         </p>
       </div>
     </div>
   </div>
 
-  <div class="bg-brand-bgAlt py-20 md:py-28 border-b border-brand-border">
+  <!-- The Gap We Fill -->
+  <div class="bg-brand-bgAlt py-16 md:py-24 border-b border-brand-border">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-4">The problem we see</p>
-      <h2 class="headline-font text-3xl sm:text-5xl font-bold mb-14 leading-tight max-w-2xl">
-        Two markets talking past each other.
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      <div class="mb-12">
+        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Market Misalignment</p>
+        <h2 class="headline-font text-3xl sm:text-5xl font-bold">Two markets talking past each other.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
         <div class="bg-white border border-brand-border rounded-xl p-8">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 010 20"/></svg>
-            </div>
-            <h3 class="headline-font text-xl font-bold text-brand-text">In Europe</h3>
-          </div>
-          <p class="text-brand-muted leading-relaxed text-sm">
-            European companies are updating supplier assessment frameworks. Verified carbon data is now a procurement requirement alongside price, quality, and delivery. Indian suppliers who cannot provide it are not just non-compliant. They are replaceable.
+          <h3 class="headline-font text-xl font-bold mb-3 text-indigo-700">In Europe</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            European buyers and regulators assume data exists, is digitized, and can be pulled instantly. They issue technical CBAM requests or CSRD Scope 3 questionnaires expect audit-grade accuracy on tight deadlines.
           </p>
         </div>
+
         <div class="bg-white border border-brand-border rounded-xl p-8">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-8 h-8 bg-amber-50 rounded-lg flex items-center justify-center">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C2410C" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"/><path d="M1 21h22"/><path d="M9 7h1"/><path d="M9 11h1"/><path d="M9 15h1"/><path d="M14 7h1"/><path d="M14 11h1"/><path d="M14 15h1"/></svg>
-            </div>
-            <h3 class="headline-font text-xl font-bold text-brand-text">In India</h3>
-          </div>
-          <p class="text-brand-muted leading-relaxed text-sm">
-            Indian companies are navigating CCTS, BRSR, and CBAM simultaneously for the first time. Most have the data somewhere. Very few have it in the right format, at the right accuracy, with the right audit trail.
+          <h3 class="headline-font text-xl font-bold mb-3 text-emerald-700">In India</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Indian manufacturers have operational data scattered across spreadsheets, plant logbooks, and utility bills. They understand their plant efficiency perfectly, but lack the translation layer into EU/BEE carbon accounting methodologies.
           </p>
         </div>
       </div>
-      <div class="border-t border-brand-border pt-8">
-        <p class="headline-font text-2xl font-bold text-brand-text">Decarbonly closes that gap.</p>
+
+      <div class="text-center font-bold headline-font text-2xl text-brand-green">
+        Decarbonly closes that gap.
       </div>
     </div>
   </div>
 
-  <div class="bg-white py-20 md:py-28 border-b border-brand-border">
+  <!-- Our Approach -->
+  <div class="bg-white py-16 md:py-24 border-b border-brand-border">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-4">Our expertise</p>
-      <h2 class="headline-font text-3xl sm:text-5xl font-bold mb-12 leading-tight max-w-xl">
-        The knowledge stack that makes the difference.
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <div class="flex items-center gap-4 p-5 bg-brand-bgAlt border border-brand-border rounded-xl">
-          <span class="headline-font text-base text-brand-green font-bold w-8">01</span>
-          <span class="font-semibold text-brand-text">CBAM and EU Climate Compliance</span>
-        </div>
-        <div class="flex items-center gap-4 p-5 bg-brand-bgAlt border border-brand-border rounded-xl">
-          <span class="headline-font text-base text-brand-green font-bold w-8">02</span>
-          <span class="font-semibold text-brand-text">CCTS and Carbon Markets</span>
-        </div>
-        <div class="flex items-center gap-4 p-5 bg-brand-bgAlt border border-brand-border rounded-xl">
-          <span class="headline-font text-base text-brand-green font-bold w-8">03</span>
-          <span class="font-semibold text-brand-text">BRSR and ESG Disclosure</span>
-        </div>
-        <div class="flex items-center gap-4 p-5 bg-brand-bgAlt border border-brand-border rounded-xl">
-          <span class="headline-font text-base text-brand-green font-bold w-8">04</span>
-          <span class="font-semibold text-brand-text">CSRD and EU Frameworks</span>
-        </div>
-        <div class="flex items-center gap-4 p-5 bg-brand-bgAlt border border-brand-border rounded-xl">
-          <span class="headline-font text-base text-brand-green font-bold w-8">05</span>
-          <span class="font-semibold text-brand-text">GHG Data and MRV</span>
-        </div>
-        <div class="flex items-center gap-4 p-5 bg-brand-bgAlt border border-brand-border rounded-xl">
-          <span class="headline-font text-base text-brand-green font-bold w-8">06</span>
-          <span class="font-semibold text-brand-text">Carbon Market Education</span>
+      <div class="max-w-2xl mb-12">
+        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Client Engagement</p>
+        <h2 class="headline-font text-3xl sm:text-5xl font-bold">What working with us actually looks like.</h2>
+      </div>
+
+      <div class="prose max-w-3xl text-sm text-brand-muted space-y-4 mb-12 leading-relaxed">
+        <p>
+          We do not arrive with a template and a team of analysts who have never been inside an Indian industrial facility.
+        </p>
+        <p>
+          We start by understanding your specific situation — your sector, your EU export exposure, your current data infrastructure, your deadlines. Most of our clients come to us having received a regulatory notification they do not fully understand, or a data request from a European customer they have never seen before.
+        </p>
+        <p>
+          The first conversation is 30 minutes. No pitch. We ask questions, you tell us where you are, and we tell you honestly what you need and whether we are the right people to help you.
+        </p>
+        <p>
+          Everything after that is structured, documented, and delivered on time.
+        </p>
+      </div>
+
+      <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-8">
+        <p class="text-brand-text font-semibold text-sm mb-4">
+          "We are often asked how we can guarantee the quality of work in a market this new and this complex. Our four methodology pillars are the answer."
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <div><strong class="text-brand-text">1. Human Expertise First:</strong> Verified by climate policy experts.</div>
+          <div><strong class="text-brand-text">2. Targeted Technology:</strong> Deterministic, auditable data flows.</div>
+          <div><strong class="text-brand-text">3. Vault-Grade Privacy:</strong> Enterprise data isolation.</div>
+          <div><strong class="text-brand-text">4. Advisory-Led Platform:</strong> Hands-on rigour at scale.</div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="bg-brand-bgAlt py-20 md:py-28 border-b border-brand-border">
+  <!-- Our Expertise -->
+  <div class="bg-brand-bgAlt py-16 md:py-24 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12">
+        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Capabilities</p>
+        <h2 class="headline-font text-3xl sm:text-5xl font-bold">Our Expertise</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white border border-brand-border rounded-xl p-6">
+          <h3 class="font-bold text-base mb-2">CBAM Support</h3>
+          <p class="text-xs text-brand-muted">EU CBAM calculation methodologies, default vs actual emissions, verifier coordination.</p>
+        </div>
+        <div class="bg-white border border-brand-border rounded-xl p-6">
+          <h3 class="font-bold text-base mb-2">CCTS Compliance</h3>
+          <p class="text-xs text-brand-muted">BEE Form A/B submissions, facility intensity baselines, CCC trading strategy.</p>
+        </div>
+        <div class="bg-white border border-brand-border rounded-xl p-6">
+          <h3 class="font-bold text-base mb-2">BRSR Reporting</h3>
+          <p class="text-xs text-brand-muted">SEBI BRSR Core indicators, value chain disclosures, assurance readiness.</p>
+        </div>
+        <div class="bg-white border border-brand-border rounded-xl p-6">
+          <h3 class="font-bold text-base mb-2">ESG &amp; CSRD</h3>
+          <p class="text-xs text-brand-muted">Double materiality assessments, ESRS standards, cross-border parent-subsidiary reporting.</p>
+        </div>
+        <div class="bg-white border border-brand-border rounded-xl p-6">
+          <h3 class="font-bold text-base mb-2">GHG Accounting</h3>
+          <p class="text-xs text-brand-muted">Scope 1, 2, and 3 accounting under GHG Protocol and ISO 14064 standards.</p>
+        </div>
+        <div class="bg-white border border-brand-border rounded-xl p-6">
+          <h3 class="font-bold text-base mb-2">Carbon Market Intelligence</h3>
+          <p class="text-xs text-brand-muted">Price forecasting, regulatory tracking, and executive capacity building.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Our Principles -->
+  <div class="bg-white py-16 md:py-24 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12">
+        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Trust &amp; Ethics</p>
+        <h2 class="headline-font text-3xl sm:text-5xl font-bold">How we work.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="border border-brand-border rounded-xl p-6">
+          <h3 class="headline-font text-lg font-bold mb-2">Independent advice.</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            We do not receive referral fees from verification bodies, registries, or technology vendors. Our advice is based solely on what is right for your compliance situation — not on commercial relationships.
+          </p>
+        </div>
+
+        <div class="border border-brand-border rounded-xl p-6">
+          <h3 class="headline-font text-lg font-bold mb-2">Transparent on what we do not know.</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            The Indian carbon market is new. Some regulatory questions do not have definitive answers yet. We tell you when we are certain and when we are working with the best available market information.
+          </p>
+        </div>
+
+        <div class="border border-brand-border rounded-xl p-6">
+          <h3 class="headline-font text-lg font-bold mb-2">We start with questions.</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            We do not arrive with a generic sustainability framework and fit your company into it. Every engagement starts with understanding your specific situation, your sector, and your actual deadlines.
+          </p>
+        </div>
+
+        <div class="border border-brand-border rounded-xl p-6">
+          <h3 class="headline-font text-lg font-bold mb-2">No unnecessary complexity.</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Carbon and ESG compliance already has enough jargon. We translate regulations into clear business decisions: what you need to do, when, and what it costs if you do not.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mission Statement -->
+  <div class="bg-brand-bgAlt py-16 text-center border-b border-brand-border">
     <div class="max-w-3xl mx-auto px-6">
-      <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-6">What we believe</p>
-      <h2 class="headline-font text-4xl sm:text-5xl font-bold text-brand-text mb-8 leading-tight">
-        Compliance should not be a crisis.
-      </h2>
-      <div class="space-y-5 text-lg text-brand-muted leading-relaxed">
-        <p>For too long, sustainability regulation in India has been treated as a checkbox: something to file and forget. Meanwhile the financial consequences of getting it wrong are growing: penalties, lost customers, stranded supply chain relationships, and regulatory investigations.</p>
-        <p>Decarbonly exists to change that relationship. Not by making compliance easier to ignore. By making it genuinely manageable with the right data, the right advisory, and the right tools.</p>
+      <h2 class="headline-font text-3xl font-bold mb-3">Compliance should not be a crisis.</h2>
+      <p class="text-brand-muted text-sm leading-relaxed">Decarbonly exists to turn complex cross-border regulations into predictable, manageable operational processes.</p>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ================================================================
+     PAGE 3: SOLUTIONS
+================================================================ -->
+<section id="page-solutions" class="page-view">
+
+  <!-- Intro Section -->
+  <div class="bg-white py-16 md:py-24 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-3xl mb-12">
+        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Full-Spectrum Practice</p>
+        <h1 class="headline-font text-4xl sm:text-6xl font-bold mb-6">Advisory and intelligence for every regulation on your desk.</h1>
+        <p class="text-brand-muted text-base leading-relaxed">Decarbonly acts as the operational bridge connecting regulator mandates with auditable corporate execution.</p>
+      </div>
+
+      <!-- 3 Columns Architecture -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-brand-bgAlt p-8 rounded-2xl border border-brand-border">
+        <div class="bg-white p-6 rounded-xl border border-brand-border">
+          <div class="text-xs font-bold uppercase text-brand-muted mb-3">01 / The Regulators</div>
+          <ul class="space-y-2 text-xs font-bold text-brand-text">
+            <li>• BEE (CCTS Carbon Market)</li>
+            <li>• SEBI (BRSR &amp; Core Assurance)</li>
+            <li>• European Commission (CBAM &amp; CSRD)</li>
+            <li>• CERC (CCC Trading Rules)</li>
+          </ul>
+        </div>
+
+        <div class="bg-brand-green text-white p-6 rounded-xl flex flex-col justify-center text-center">
+          <div class="text-xs font-bold uppercase tracking-wider text-white/80 mb-2">02 / Decarbonly Engine</div>
+          <p class="text-xs font-semibold leading-relaxed">We translate complex regulatory requirements into operational, audit-ready action for your business.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-brand-border">
+          <div class="text-xs font-bold uppercase text-brand-muted mb-3">03 / What You Get</div>
+          <ul class="space-y-2 text-xs font-bold text-brand-text">
+            <li>• Verified compliance data</li>
+            <li>• Auditable report packages</li>
+            <li>• Carbon trading strategies</li>
+            <li>• Ongoing regulatory monitoring</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 01 CBAM Support -->
+  <div id="solution-cbam" class="bg-brand-bgAlt py-16 md:py-20 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-brand-green font-extrabold text-xl">01</span>
+        <span class="text-xs font-bold uppercase tracking-wider bg-brand-greenLight text-brand-greenDark px-3 py-1 rounded-full">CBAM Support</span>
+      </div>
+      <h2 class="headline-font text-3xl sm:text-4xl font-bold mb-6">CBAM Support for Exporters</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-4 text-xs sm:text-sm text-brand-muted leading-relaxed">
+          <p>Your European customers are legally required to declare embedded carbon for every tonne of steel, aluminium, cement, or fertiliser imported into the EU. If you do not provide primary verified data, default penal values apply.</p>
+          <p>We perform facility-level embedded carbon calculations, map complex precursor emissions across your supply chain, coordinate ISO 14065 verifiers, and generate standard XML/Excel CBAM declaration packages.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-brand-border space-y-3 text-xs">
+          <div class="font-bold text-brand-text text-sm mb-2">Deliverables include:</div>
+          <div>✓ Scope 1 &amp; Scope 2 direct/indirect carbon intensity per product line</div>
+          <div>✓ Precursor carbon tracking across supplier inputs</div>
+          <div>✓ Official CBAM quarterly and annual declaration packages</div>
+          <div>✓ Verification audit support with accredited EU verifiers</div>
+          <a href="#contact" onclick="navigateTo('contact')" class="block text-center bg-brand-green text-white font-bold py-2.5 rounded-lg mt-4">Request CBAM Scope Call</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 CCTS Compliance -->
+  <div id="solution-ccts" class="bg-white py-16 md:py-20 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-brand-green font-extrabold text-xl">02</span>
+        <span class="text-xs font-bold uppercase tracking-wider bg-brand-greenLight text-brand-greenDark px-3 py-1 rounded-full">CCTS Compliance</span>
+      </div>
+      <h2 class="headline-font text-3xl sm:text-4xl font-bold mb-6">CCTS Compliance &amp; Trading Advisory</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-4 text-xs sm:text-sm text-brand-muted leading-relaxed">
+          <p>India's Carbon Credit Trading Scheme obligates industrial plants to meet strict greenhouse gas emission intensity targets. Facilities that beat targets earn Carbon Credit Certificates (CCCs); underperformers must purchase credits on exchanges.</p>
+          <p>We establish your plant baseline, set up monthly MRV (Monitoring, Reporting, Verification) data capture aligned with BEE guidelines, and formulate trading strategies on IEX and PXIL.</p>
+        </div>
+        <div class="bg-brand-bgAlt p-6 rounded-xl border border-brand-border space-y-3 text-xs">
+          <div class="font-bold text-brand-text text-sm mb-2">Deliverables include:</div>
+          <div>✓ Facility boundary definition &amp; BEE baseline verification</div>
+          <div>✓ Form A &amp; Form B submission management</div>
+          <div>✓ Internal carbon accounting and intensity tracking tools</div>
+          <div>✓ CCC shortfall/surplus financial modeling &amp; exchange trading execution</div>
+          <a href="#contact" onclick="navigateTo('contact')" class="block text-center bg-brand-text text-white font-bold py-2.5 rounded-lg mt-4">Discuss CCTS Readiness</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 BRSR Reporting -->
+  <div id="solution-brsr" class="bg-brand-bgAlt py-16 md:py-20 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-brand-green font-extrabold text-xl">03</span>
+        <span class="text-xs font-bold uppercase tracking-wider bg-brand-greenLight text-brand-greenDark px-3 py-1 rounded-full">BRSR Reporting</span>
+      </div>
+      <h2 class="headline-font text-3xl sm:text-4xl font-bold mb-6">BRSR Reporting &amp; BRSR Core Assurance</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-4 text-xs sm:text-sm text-brand-muted leading-relaxed">
+          <p>SEBI's mandate requires top listed Indian entities to publish Business Responsibility and Sustainability Reports (BRSR) and secure reasonable assurance over BRSR Core metrics including value chain disclosures.</p>
+          <p>We structure cross-departmental data governance across E, S, and G pillars, map suppliers for value chain reporting, and prepare bulletproof audit trails for assurance providers.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-brand-border space-y-3 text-xs">
+          <div class="font-bold text-brand-text text-sm mb-2">Deliverables include:</div>
+          <div>✓ 140+ BRSR indicator data architecture setup</div>
+          <div>✓ Value chain scope mapping for Tier-1 suppliers</div>
+          <div>✓ BRSR Core assurance readiness gap report</div>
+          <div>✓ Complete SEBI filing documentation package</div>
+          <a href="#contact" onclick="navigateTo('contact')" class="block text-center bg-brand-green text-white font-bold py-2.5 rounded-lg mt-4">Start BRSR Mapping</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 ESG & CSRD -->
+  <div id="solution-esg" class="bg-white py-16 md:py-20 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-brand-green font-extrabold text-xl">04</span>
+        <span class="text-xs font-bold uppercase tracking-wider bg-brand-greenLight text-brand-greenDark px-3 py-1 rounded-full">ESG &amp; CSRD</span>
+      </div>
+      <h2 class="headline-font text-3xl sm:text-4xl font-bold mb-6">ESG Reporting &amp; CSRD Alignment</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-4 text-xs sm:text-sm text-brand-muted leading-relaxed">
+          <p>For Indian companies operating European subsidiaries or seeking EU capital, the EU Corporate Sustainability Reporting Directive (CSRD) mandates rigorous Double Materiality Assessments and ESRS disclosures.</p>
+          <p>We bridge your existing Indian BRSR data with EU ESRS requirements, saving hundreds of hours of redundant data collection and ensuring international comparability.</p>
+        </div>
+        <div class="bg-brand-bgAlt p-6 rounded-xl border border-brand-border space-y-3 text-xs">
+          <div class="font-bold text-brand-text text-sm mb-2">Deliverables include:</div>
+          <div>✓ Double Materiality Assessment (Financial &amp; Impact)</div>
+          <div>✓ BRSR-to-ESRS gap mapping report</div>
+          <div>✓ Scope 3 accounting across downstream &amp; upstream value chains</div>
+          <div>✓ EU investor-ready ESG disclosure packages</div>
+          <a href="#contact" onclick="navigateTo('contact')" class="block text-center bg-brand-text text-white font-bold py-2.5 rounded-lg mt-4">Assess CSRD Scope</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 Carbon Market Education -->
+  <div id="solution-education" class="bg-brand-bgAlt py-16 md:py-20 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-brand-green font-extrabold text-xl">05</span>
+        <span class="text-xs font-bold uppercase tracking-wider bg-brand-greenLight text-brand-greenDark px-3 py-1 rounded-full">Carbon Market Education</span>
+      </div>
+      <h2 class="headline-font text-3xl sm:text-4xl font-bold mb-6">Executive &amp; Technical Capacity Building</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-4 text-xs sm:text-sm text-brand-muted leading-relaxed">
+          <p>Regulations move faster than internal corporate knowledge. We run custom executive workshops, plant manager certification programs, and finance team briefings on CCTS, CBAM, and carbon market mechanics.</p>
+          <p>Equip your board, C-suite, and plant teams with practical knowledge on how carbon intensity directly impacts EBITDA and market access.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl border border-brand-border space-y-3 text-xs">
+          <div class="font-bold text-brand-text text-sm mb-2">Deliverables include:</div>
+          <div>✓ Half-day executive &amp; board briefing sessions</div>
+          <div>✓ Multi-week plant engineering MRV masterclasses</div>
+          <div>✓ Custom compliance playbooks for leadership</div>
+          <div>✓ Certification of completion for compliance staff</div>
+          <a href="#contact" onclick="navigateTo('contact')" class="block text-center bg-brand-green text-white font-bold py-2.5 rounded-lg mt-4">Inquire About Training</a>
+        </div>
       </div>
     </div>
   </div>
@@ -847,290 +1204,207 @@
 
 
 <!-- ================================================================
-     PAGE: SOLUTIONS
+     PAGE 4: SECTORS
 ================================================================ -->
-<section id="page-solutions" class="page-view">
+<section id="page-sectors" class="page-view">
 
-  <div class="bg-white py-20 md:py-28 border-b border-brand-border">
+  <!-- Sector Hero -->
+  <div class="bg-white py-16 md:py-20 border-b border-brand-border">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-4">What we offer</p>
-      <h1 class="headline-font text-4xl sm:text-6xl font-bold text-brand-text max-w-3xl mb-6 leading-tight">
-        Advisory and intelligence for every regulation on your desk.
-      </h1>
-      <p class="text-lg text-brand-muted max-w-2xl leading-relaxed">
-        Every solution we offer is built around one principle: understand your situation first, then build what you actually need. Not a template. Not a one-size approach.
+      <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Sector Coverage</p>
+      <h1 class="headline-font text-4xl sm:text-6xl font-bold mb-4">Each sector has a different problem. We know which one is yours.</h1>
+      <p class="text-brand-muted text-base max-w-3xl leading-relaxed">
+        CCTS targets are sector-specific. CBAM costs vary dramatically by production route. BRSR requirements depend on company size and sector profile. There is no generic compliance solution. Start with your sector.
+      </p>
+
+      <!-- Sector Selector Tabs -->
+      <div class="flex flex-wrap gap-2 mt-8">
+        <button onclick="showSector('cement')" id="btn-sec-cement" class="sector-btn active border border-brand-border px-5 py-2.5 rounded-lg text-xs font-bold transition-all">Cement</button>
+        <button onclick="showSector('steel')" id="btn-sec-steel" class="sector-btn border border-brand-border px-5 py-2.5 rounded-lg text-xs font-bold transition-all">Steel</button>
+        <button onclick="showSector('aluminium')" id="btn-sec-aluminium" class="sector-btn border border-brand-border px-5 py-2.5 rounded-lg text-xs font-bold transition-all">Aluminium</button>
+        <button onclick="showSector('fertilisers')" id="btn-sec-fertilisers" class="sector-btn border border-brand-border px-5 py-2.5 rounded-lg text-xs font-bold transition-all">Fertilisers</button>
+        <button onclick="showSector('textiles')" id="btn-sec-textiles" class="sector-btn border border-brand-border px-5 py-2.5 rounded-lg text-xs font-bold transition-all">Textiles</button>
+        <button onclick="showSector('petrochemicals')" id="btn-sec-petrochemicals" class="sector-btn border border-brand-border px-5 py-2.5 rounded-lg text-xs font-bold transition-all">Petrochemicals</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dynamic Sector Content Container -->
+  <div class="bg-brand-bgAlt py-16 md:py-24 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6" id="sector-content-area">
+      <!-- Content populated by JavaScript function showSector() -->
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ================================================================
+     PAGE 5: RESOURCES
+================================================================ -->
+<section id="page-resources" class="page-view">
+
+  <!-- Resources Hero -->
+  <div class="bg-white py-16 md:py-20 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Free Resources</p>
+      <h1 class="headline-font text-4xl sm:text-6xl font-bold mb-4">Everything you need to understand your compliance obligations — before you call anyone.</h1>
+      <p class="text-brand-muted text-base max-w-3xl leading-relaxed">
+        We publish practical guides, checklists, and regulatory trackers for every framework Decarbonly covers. All free. All written for people who have to act on the information.
       </p>
     </div>
   </div>
 
-  <!-- CBAM -->
-  <div id="solution-cbam" class="relative bg-brand-bgAlt py-20 border-b border-brand-border overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <span class="headline-font text-8xl md:text-9xl font-bold text-brand-text/5 absolute -top-10 left-6 select-none pointer-events-none">01</span>
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 bg-brand-greenLight rounded-xl flex items-center justify-center">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006640" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </div>
-        <span class="text-brand-green font-bold text-sm uppercase tracking-wider">CBAM Support</span>
-      </div>
-      <h2 class="headline-font text-3xl sm:text-5xl font-bold text-brand-text mb-8 leading-tight max-w-2xl">
-        CBAM Compliance for Indian Exporters
-      </h2>
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        <div class="lg:col-span-7 space-y-4 text-brand-muted leading-relaxed">
-          <p>Your European customers are legally required to declare the embedded carbon in every tonne of steel, cement, aluminium, or fertiliser they import from India. If you cannot provide verified data, they use EU default values: typically 30% to 80% above your actual emissions.</p>
-          <p>That gap costs money. Either yours or theirs. And it directly affects whether you remain a preferred supplier.</p>
-          <p class="text-brand-text font-semibold">We calculate your embedded carbon in the EU's exact methodology, coordinate verification, and prepare the complete CBAM data package your European customer needs.</p>
-        </div>
-        <div class="lg:col-span-5 bg-white p-8 rounded-xl border border-brand-border shadow-sm">
-          <h3 class="font-bold text-brand-text text-base mb-5">What this includes</h3>
-          <ul class="space-y-3 text-sm text-brand-muted">
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Embedded carbon calculation per EU CBAM implementing regulation</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Verification coordination with ISO 14065 accredited bodies</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> CBAM declaration data package preparation</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> CCC deduction strategy to reduce EU liability</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Ongoing annual monitoring and declaration support</li>
-          </ul>
-          <a href="#contact" class="block w-full text-center mt-6 bg-brand-green hover:bg-brand-greenHover text-white font-semibold py-3 rounded-lg transition-all">
-            Talk to us about CBAM
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CCTS -->
-  <div id="solution-ccts" class="relative bg-white py-20 border-b border-brand-border overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <span class="headline-font text-8xl md:text-9xl font-bold text-brand-text/5 absolute -top-10 left-6 select-none pointer-events-none">02</span>
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 bg-brand-greenLight rounded-xl flex items-center justify-center">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006640" stroke-width="2"><path d="M12 2a7 7 0 100 14A7 7 0 0012 2z"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <span class="text-brand-green font-bold text-sm uppercase tracking-wider">CCTS Compliance</span>
-      </div>
-      <h2 class="headline-font text-3xl sm:text-5xl font-bold text-brand-text mb-8 leading-tight max-w-2xl">
-        CCTS and Carbon Market Advisory
-      </h2>
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        <div class="lg:col-span-7 space-y-4 text-brand-muted leading-relaxed">
-          <p>India's Carbon Credit Trading Scheme is live. 490 industrial facilities are now legally required to measure their emission intensity, submit verified MRV data, and buy or sell Carbon Credit Certificates on Indian power exchanges.</p>
-          <p>Most of them have never built a GHG inventory before.</p>
-          <p class="text-brand-text font-semibold">We help you define your emission boundary correctly, build your data collection system, calculate your intensity to BEE's exact methodology, and develop a CCC trading strategy that treats compliance as a financial position.</p>
-        </div>
-        <div class="lg:col-span-5 bg-brand-bgAlt p-8 rounded-xl border border-brand-border">
-          <h3 class="font-bold text-brand-text text-base mb-5">What this includes</h3>
-          <ul class="space-y-3 text-sm text-brand-muted">
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Emission boundary definition and GHG inventory development</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Monthly data collection system design</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> BEE-aligned MRV report preparation</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Verification coordination with accredited agencies</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> CCC compliance position modelling and trading strategy</li>
-          </ul>
-          <a href="#contact" class="block w-full text-center mt-6 bg-brand-text hover:bg-gray-800 text-white font-semibold py-3 rounded-lg transition-all">
-            Talk to us about CCTS
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BRSR -->
-  <div id="solution-brsr" class="relative bg-brand-bgAlt py-20 border-b border-brand-border overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <span class="headline-font text-8xl md:text-9xl font-bold text-brand-text/5 absolute -top-10 left-6 select-none pointer-events-none">03</span>
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 bg-brand-greenLight rounded-xl flex items-center justify-center">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006640" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
-        </div>
-        <span class="text-brand-green font-bold text-sm uppercase tracking-wider">BRSR Reporting</span>
-      </div>
-      <h2 class="headline-font text-3xl sm:text-5xl font-bold text-brand-text mb-8 leading-tight max-w-2xl">
-        BRSR and ESG Reporting
-      </h2>
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        <div class="lg:col-span-7 space-y-4 text-brand-muted leading-relaxed">
-          <p>SEBI now requires third-party assurance on BRSR Core disclosures for India's top listed companies. Value chain disclosures are mandatory. The assurance body will ask for data trails, methodology documentation, and evidence of internal controls.</p>
-          <p>Most companies are not ready for that level of scrutiny.</p>
-          <p class="text-brand-text font-semibold">We help you build a BRSR program that does not just pass compliance: it communicates something real to the investors, customers, and regulators reading it.</p>
-        </div>
-        <div class="lg:col-span-5 bg-white p-8 rounded-xl border border-brand-border shadow-sm">
-          <h3 class="font-bold text-brand-text text-base mb-5">What this includes</h3>
-          <ul class="space-y-3 text-sm text-brand-muted">
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Materiality assessment grounded in your actual business</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Data architecture across HR, operations, finance, and procurement</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> BRSR Core report drafting and narrative development</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Assurance readiness preparation</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Value chain ESG data collection from suppliers</li>
-          </ul>
-          <a href="#contact" class="block w-full text-center mt-6 bg-brand-green hover:bg-brand-greenHover text-white font-semibold py-3 rounded-lg transition-all">
-            Talk to us about BRSR
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ESG -->
-  <div id="solution-esg" class="relative bg-white py-20 border-b border-brand-border overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <span class="headline-font text-8xl md:text-9xl font-bold text-brand-text/5 absolute -top-10 left-6 select-none pointer-events-none">04</span>
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 bg-brand-greenLight rounded-xl flex items-center justify-center">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006640" stroke-width="2"><path d="M3 3h18v18H3z" rx="2"/><path d="M8 17V9M12 17v-5M16 17v-8"/></svg>
-        </div>
-        <span class="text-brand-green font-bold text-sm uppercase tracking-wider">ESG Reporting &amp; Solutions</span>
-      </div>
-      <h2 class="headline-font text-3xl sm:text-5xl font-bold text-brand-text mb-8 leading-tight max-w-2xl">
-        CSRD Gap Assessment for Indian MNCs
-      </h2>
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        <div class="lg:col-span-7 space-y-4 text-brand-muted leading-relaxed">
-          <p>Indian multinationals with European subsidiaries or significant EU revenue are entering CSRD scope. The simplified ESRS still requires double materiality assessment, Scope 3 disclosure, and due diligence processes that most Indian companies have never done.</p>
-          <p>Your BRSR report is a head start. The gap between BRSR and CSRD is smaller than most people think, and larger than most people are prepared for.</p>
-          <p class="text-brand-text font-semibold">We map exactly where you stand, what needs to be built, and in what sequence.</p>
-        </div>
-        <div class="lg:col-span-5 bg-brand-bgAlt p-8 rounded-xl border border-brand-border">
-          <h3 class="font-bold text-brand-text text-base mb-5">What this includes</h3>
-          <ul class="space-y-3 text-sm text-brand-muted">
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> BRSR to CSRD gap analysis across all ESRS standards</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Double materiality assessment design</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Scope 3 value chain emissions mapping</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> CSRD compliance roadmap and timeline</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Ongoing CSRD reporting support</li>
-          </ul>
-          <a href="#contact" class="block w-full text-center mt-6 bg-brand-text hover:bg-gray-800 text-white font-semibold py-3 rounded-lg transition-all">
-            Talk to us about CSRD
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- EDUCATION -->
-  <div id="solution-education" class="relative bg-brand-bgAlt py-20 border-b border-brand-border overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <span class="headline-font text-8xl md:text-9xl font-bold text-brand-text/5 absolute -top-10 left-6 select-none pointer-events-none">05</span>
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 bg-brand-greenLight rounded-xl flex items-center justify-center">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#006640" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.5 4 3 6 3s6-1.5 6-3v-5"/></svg>
-        </div>
-        <span class="text-brand-green font-bold text-sm uppercase tracking-wider">Carbon Market Education</span>
-      </div>
-      <h2 class="headline-font text-3xl sm:text-5xl font-bold text-brand-text mb-8 leading-tight max-w-2xl">
-        Education and Certification
-      </h2>
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        <div class="lg:col-span-7 space-y-4 text-brand-muted leading-relaxed">
-          <p>India's carbon and ESG compliance market is new. The professionals who need to navigate it (CFOs, sustainability heads, procurement leaders, and finance teams) are learning on the job from notifications and WhatsApp forwards.</p>
-          <p>We build that knowledge properly. India-specific, regulation-aligned, practically oriented. Not European frameworks adapted for India. The real Indian market, taught by someone who also understands the European context it is converging with.</p>
-        </div>
-        <div class="lg:col-span-5 bg-white p-8 rounded-xl border border-brand-border shadow-sm">
-          <h3 class="font-bold text-brand-text text-base mb-5">What this includes</h3>
-          <ul class="space-y-3 text-sm text-brand-muted">
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Professional certification in CCTS, BRSR, and CBAM</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Corporate team training programs</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Cohort-based online learning with live sessions</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Case studies from Indian industrial contexts</li>
-            <li class="flex items-start gap-2.5"><span class="text-brand-green font-bold flex-shrink-0">&#10003;</span> Certificate of completion</li>
-          </ul>
-          <a href="#contact" class="block w-full text-center mt-6 bg-brand-green hover:bg-brand-greenHover text-white font-semibold py-3 rounded-lg transition-all">
-            Talk to us about Education
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-
-<!-- ================================================================
-     PAGE: CONTACT
-================================================================ -->
-<section id="page-contact" class="page-view">
-
-  <div class="bg-white py-20 md:py-28 border-b border-brand-border">
+  <!-- Section 1: Email-Gated Guides -->
+  <div id="res-guides" class="bg-brand-bgAlt py-16 md:py-20 border-b border-brand-border">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-xl mb-14">
-        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-4">Get in touch</p>
-        <h1 class="headline-font text-4xl sm:text-6xl font-bold text-brand-text mb-6 leading-tight">Let us talk.</h1>
-        <p class="text-lg text-brand-muted leading-relaxed">
-          Whether you are an Indian manufacturer facing a CBAM data request, a listed company preparing for BRSR assurance, or a European company trying to get verified carbon data from your Indian supply chain, the first conversation is always free.
-        </p>
-      </div>
+      <h2 class="headline-font text-2xl sm:text-3xl font-bold mb-8">Practical Guides &amp; Checklists</h2>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-        <div>
-          <div class="space-y-5 mb-10">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-brand-greenLight rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#006640" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <a href="mailto:hello@decarbonly.com" class="text-brand-text font-semibold hover:text-brand-green transition-colors">hello@decarbonly.com</a>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-brand-greenLight rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 fill-[#006640]" viewBox="0 0 24 24">
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                </svg>
-              </div>
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="text-brand-text font-semibold hover:text-brand-green transition-colors">Connect on LinkedIn</a>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-brand-greenLight rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#006640" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <span class="text-brand-text font-semibold">India and France</span>
-            </div>
-          </div>
-          <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-6">
-            <p class="text-sm text-brand-muted leading-relaxed">
-              We typically respond within 24 hours. If your deadline is more urgent than that, say so in your message and we will prioritise accordingly.
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white border border-brand-border rounded-xl p-6 flex flex-col justify-between card-lift">
+          <div>
+            <span class="text-[10px] font-bold uppercase bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full">Guide</span>
+            <h3 class="headline-font text-lg font-bold mt-4 mb-2">The Indian Exporter's CBAM Guide</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+              What embedded carbon is, how it is calculated, what your EU customer needs, and the timeline to September 2027. 20 pages. Updated after every major CBAM circular.
             </p>
           </div>
+          <button onclick="openModal('guide-modal')" class="bg-brand-green hover:bg-brand-greenHover text-white font-bold text-xs py-3 rounded-lg transition-all w-full">
+            Download free guide
+          </button>
         </div>
 
-        <div id="contact-form-wrapper">
-          <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs uppercase font-semibold text-brand-muted mb-2">Name</label>
-                <input type="text" required placeholder="Your name">
-              </div>
-              <div>
-                <label class="block text-xs uppercase font-semibold text-brand-muted mb-2">Company</label>
-                <input type="text" required placeholder="Company name">
-              </div>
-            </div>
-            <div>
-              <label class="block text-xs uppercase font-semibold text-brand-muted mb-2">Email</label>
-              <input type="email" required placeholder="name@company.com">
-            </div>
-            <div>
-              <label class="block text-xs uppercase font-semibold text-brand-muted mb-2">What are you dealing with</label>
-              <select required>
-                <option value="" disabled selected>Select an option</option>
-                <option value="CBAM Support">CBAM Support</option>
-                <option value="CCTS Compliance">CCTS Compliance</option>
-                <option value="BRSR Reporting">BRSR Reporting</option>
-                <option value="ESG Reporting and Solutions">ESG Reporting &amp; Solutions</option>
-                <option value="Carbon Market Education">Carbon Market Education</option>
-                <option value="Something else">Something else</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs uppercase font-semibold text-brand-muted mb-2">Message</label>
-              <textarea rows="4" required placeholder="Tell us about your timeline and requirements"></textarea>
-            </div>
-            <button type="submit" class="w-full bg-brand-green hover:bg-brand-greenHover text-white font-bold py-4 rounded-lg transition-all">
-              Send message
-            </button>
-          </form>
-          <div id="form-success" class="hidden text-center py-12 space-y-4">
-            <div class="inline-flex items-center justify-center w-14 h-14 bg-brand-greenLight text-brand-green rounded-full text-2xl mb-2">&#10003;</div>
-            <p class="headline-font text-2xl text-brand-text font-bold">Thank you. We will be in touch within 24 hours.</p>
+        <div class="bg-white border border-brand-border rounded-xl p-6 flex flex-col justify-between card-lift">
+          <div>
+            <span class="text-[10px] font-bold uppercase bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full">Primer</span>
+            <h3 class="headline-font text-lg font-bold mt-4 mb-2">The CCTS Primer for Indian Manufacturers</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+              How the Carbon Credit Trading Scheme works, what MRV requires, how CCC trading functions on IEX and PXIL, and what your first compliance year looks like.
+            </p>
           </div>
+          <button onclick="openModal('guide-modal')" class="bg-brand-green hover:bg-brand-greenHover text-white font-bold text-xs py-3 rounded-lg transition-all w-full">
+            Download free primer
+          </button>
+        </div>
+
+        <div class="bg-white border border-brand-border rounded-xl p-6 flex flex-col justify-between card-lift">
+          <div>
+            <span class="text-[10px] font-bold uppercase bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full">Checklist</span>
+            <h3 class="headline-font text-lg font-bold mt-4 mb-2">The BRSR Core Readiness Checklist</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+              140+ indicators. For each one: what data is needed, who owns it inside your company, what source document evidences it, and what assurance bodies will check.
+            </p>
+          </div>
+          <button onclick="openModal('guide-modal')" class="bg-brand-green hover:bg-brand-greenHover text-white font-bold text-xs py-3 rounded-lg transition-all w-full">
+            Download free checklist
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Regulatory Calendar -->
+  <div id="res-calendar" class="bg-white py-16 md:py-20 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex justify-between items-end mb-8">
+        <div>
+          <h2 class="headline-font text-2xl sm:text-3xl font-bold">Regulatory Calendar</h2>
+          <p class="text-xs text-brand-muted mt-1">Updated monthly by Decarbonly's climate intelligence team.</p>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr class="bg-brand-bgAlt border-b border-brand-border text-brand-muted uppercase font-semibold">
+              <th class="p-4">Deadline</th>
+              <th class="p-4">Regulation</th>
+              <th class="p-4">Who is affected</th>
+              <th class="p-4">What must be done</th>
+              <th class="p-4">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-brand-border">
+            <tr>
+              <td class="p-4 font-bold text-brand-text">September 2027</td>
+              <td class="p-4 font-semibold text-blue-700">CBAM First Annual Declaration</td>
+              <td class="p-4 text-brand-muted">Indian exporters to EU in covered sectors</td>
+              <td class="p-4 text-brand-muted">Submit verified embedded carbon data for 2026 shipments</td>
+              <td class="p-4"><span class="bg-blue-100 text-blue-800 font-bold px-2 py-0.5 rounded-full text-[10px]">Upcoming</span></td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-brand-text">FY2026-27</td>
+              <td class="p-4 font-semibold text-amber-700">BRSR Core Assurance</td>
+              <td class="p-4 text-brand-muted">Top 1,000 listed Indian companies</td>
+              <td class="p-4 text-brand-muted">Obtain reasonable third-party assurance on BRSR Core indicators</td>
+              <td class="p-4"><span class="bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded-full text-[10px]">Current</span></td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-brand-text">October 2026</td>
+              <td class="p-4 font-semibold text-emerald-700">CCTS Trading Live</td>
+              <td class="p-4 text-brand-muted">490+ obligated industrial facilities</td>
+              <td class="p-4 text-brand-muted">MRV submissions, CCC trading on power exchanges (IEX/PXIL)</td>
+              <td class="p-4"><span class="bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full text-[10px]">Live</span></td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-brand-text">FY2027</td>
+              <td class="p-4 font-semibold text-purple-700">CSRD Scope Expansion</td>
+              <td class="p-4 text-brand-muted">Indian MNCs with EU revenue &gt; €450M</td>
+              <td class="p-4 text-brand-muted">Mandatory ESRS-based sustainability reporting for non-EU parents</td>
+              <td class="p-4"><span class="bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded-full text-[10px]">Approaching</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: FAQ -->
+  <div id="res-faq" class="bg-brand-bgAlt py-16 md:py-20 border-b border-brand-border">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="headline-font text-2xl sm:text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+
+      <div class="space-y-4">
+        <div class="bg-white border border-brand-border rounded-xl p-6">
+          <h3 class="font-bold text-sm text-brand-text mb-2">Q: We export to Europe but only a small amount. Do we still need to worry about CBAM?</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Yes — CBAM has no minimum threshold for exporters. Even small volumes require your EU importer to declare embedded carbon. The financial impact may be small, but the data requirement is identical. The practical question is whether your EU customer will absorb default penalty costs or pass them to you.
+          </p>
+        </div>
+
+        <div class="bg-white border border-brand-border rounded-xl p-6">
+          <h3 class="font-bold text-sm text-brand-text mb-2">Q: We already file BRSR. Does that help with CBAM?</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Partially. Some of the emissions data you collect for BRSR overlaps with what CBAM requires. But CBAM uses a different calculation methodology, different system boundaries, and requires third-party verification under specific ISO standards. BRSR data is a useful starting point but not a substitute.
+          </p>
+        </div>
+
+        <div class="bg-white border border-brand-border rounded-xl p-6">
+          <h3 class="font-bold text-sm text-brand-text mb-2">Q: What is the difference between CCTS and CBAM?</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            CCTS is India's domestic carbon market — a compliance scheme for Indian industrial facilities with mandatory emission intensity targets. CBAM is a European Union regulation that applies to companies importing goods into the EU. They are separate systems with separate obligations, but for Indian industrial exporters, both apply simultaneously.
+          </p>
+        </div>
+
+        <div class="bg-white border border-brand-border rounded-xl p-6">
+          <h3 class="font-bold text-sm text-brand-text mb-2">Q: We have not started preparing for either. Is it too late?</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            Not yet. For CCTS, the first compliance year is underway and MRV preparation should ideally have begun — but the penalty period is ahead. For CBAM, the first declaration is September 2027 and the measurement period is active — meaning data collection must start now.
+          </p>
+        </div>
+
+        <div class="bg-white border border-brand-border rounded-xl p-6">
+          <h3 class="font-bold text-sm text-brand-text mb-2">Q: What does working with Decarbonly cost?</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            It depends on scope. A CBAM readiness assessment starts at ₹2–3 lakhs. A full CCTS MRV advisory engagement for one facility is typically ₹5–12 lakhs per year. A BRSR Core advisory engagement for a mid-cap listed company is ₹4–8 lakhs. The first 30-minute scoping call is free.
+          </p>
+        </div>
+
+        <div class="bg-white border border-brand-border rounded-xl p-6">
+          <h3 class="font-bold text-sm text-brand-text mb-2">Q: Do you do the verification?</h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            No. Accredited verification bodies (Bureau Veritas, TÜV SÜD, DNV, etc.) perform the verification. Decarbonly prepares your data and documentation so that verification passes cleanly and quickly on the first attempt.
+          </p>
         </div>
       </div>
     </div>
@@ -1140,75 +1414,248 @@
 
 
 <!-- ================================================================
-     PAGE: BLOG
+     PAGE 6: INSIGHTS (BLOG)
 ================================================================ -->
 <section id="page-blog" class="page-view">
 
-  <div class="bg-white py-20 md:py-28 border-b border-brand-border">
+  <!-- Insights Hero -->
+  <div class="bg-white py-16 md:py-20 border-b border-brand-border">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-3xl">
-        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-4">Insights</p>
-        <h1 class="headline-font text-4xl sm:text-6xl font-bold text-brand-text max-w-3xl mb-6 leading-tight">
-          Carbon and ESG intelligence: written for people who have to act on it.
-        </h1>
-        <p class="text-lg text-brand-muted leading-relaxed">
-          Not academic analysis. Not regulatory summaries. Practical thinking on CCTS, BRSR, CBAM, and CSRD: written for the CFOs, sustainability heads, and compliance teams actually dealing with these regulations.
-        </p>
+      <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Insights</p>
+      <h1 class="headline-font text-4xl sm:text-6xl font-bold mb-4">Carbon and ESG intelligence — written for people who have to act on it.</h1>
+      <p class="text-brand-muted text-base max-w-3xl leading-relaxed">
+        Analysis, regulatory circular breakdowns, and market commentary for CFOs, sustainability leaders, and plant directors.
+      </p>
+    </div>
+  </div>
+
+  <!-- Regulatory Updates Feed -->
+  <div class="bg-brand-bgAlt py-10 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-brand-muted mb-4 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-brand-green inline-block"></span>
+        Live Regulatory Feed
+      </h2>
+
+      <div class="bg-white border border-brand-border rounded-xl overflow-hidden divide-y divide-brand-border text-xs">
+        <div class="p-4 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+          <div><span class="font-bold text-brand-text">August 2026:</span> CCTS Form A deadline closed. Trading on IEX and PXIL now active for covered industrial sectors.</div>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full self-start sm:self-auto">CCTS</span>
+        </div>
+        <div class="p-4 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+          <div><span class="font-bold text-brand-text">August 2026:</span> EU ETS carbon price reaches €82.40/tonne. Updated CBAM cost implications calculated.</div>
+          <span class="text-[10px] bg-blue-100 text-blue-800 font-bold px-2 py-0.5 rounded-full self-start sm:self-auto">CBAM</span>
+        </div>
+        <div class="p-4 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+          <div><span class="font-bold text-brand-text">July 2026:</span> CERC notified monthly CCC trading window schedule for Q3 2026.</div>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full self-start sm:self-auto">CCTS</span>
+        </div>
+        <div class="p-4 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+          <div><span class="font-bold text-brand-text">June 2026:</span> SEBI clarified BRSR Core assurance requirements for value chain scope disclosures.</div>
+          <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded-full self-start sm:self-auto">BRSR</span>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="bg-brand-bgAlt py-20 border-b border-brand-border">
+  <!-- Featured Articles & Filter -->
+  <div class="bg-white py-16 md:py-20 border-b border-brand-border">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap gap-2 mb-10">
+        <button onclick="filterBlog('all')" class="cat-btn active bg-brand-bgAlt hover:bg-brand-green hover:text-white px-4 py-2 rounded-lg text-xs font-bold transition-all">All</button>
+        <button onclick="filterBlog('cbam')" class="cat-btn bg-brand-bgAlt hover:bg-brand-green hover:text-white px-4 py-2 rounded-lg text-xs font-bold transition-all">CBAM</button>
+        <button onclick="filterBlog('ccts')" class="cat-btn bg-brand-bgAlt hover:bg-brand-green hover:text-white px-4 py-2 rounded-lg text-xs font-bold transition-all">CCTS</button>
+        <button onclick="filterBlog('brsr')" class="cat-btn bg-brand-bgAlt hover:bg-brand-green hover:text-white px-4 py-2 rounded-lg text-xs font-bold transition-all">BRSR</button>
+        <button onclick="filterBlog('csrd')" class="cat-btn bg-brand-bgAlt hover:bg-brand-green hover:text-white px-4 py-2 rounded-lg text-xs font-bold transition-all">CSRD</button>
+        <button onclick="filterBlog('updates')" class="cat-btn bg-brand-bgAlt hover:bg-brand-green hover:text-white px-4 py-2 rounded-lg text-xs font-bold transition-all">Regulatory Updates</button>
+      </div>
 
-        <article class="bg-white border border-brand-border rounded-xl p-8 flex flex-col justify-between hover:border-brand-green transition-all card-lift">
+      <!-- Article Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="blog-grid">
+        
+        <article class="blog-card cbam bg-brand-bgAlt border border-brand-border rounded-xl p-6 flex flex-col justify-between card-lift">
           <div>
-            <div class="flex items-center justify-between mb-5">
-              <span class="bg-blue-100 text-blue-700 font-bold text-xs px-2.5 py-1 rounded-full uppercase tracking-wider">CBAM</span>
-              <span class="text-xs text-brand-muted">Coming soon</span>
+            <div class="flex items-center justify-between mb-4">
+              <span class="bg-blue-100 text-blue-700 font-bold text-[10px] px-2.5 py-1 rounded-full uppercase">CBAM</span>
+              <span class="text-[10px] text-brand-muted">August 2026</span>
             </div>
-            <h3 class="headline-font text-xl font-bold text-brand-text mb-4 leading-snug">
+            <h3 class="headline-font text-lg font-bold mb-3">
               What your European customer is actually asking for: why most Indian suppliers cannot answer it
             </h3>
-            <p class="text-brand-muted text-sm leading-relaxed mb-6">
-              The CBAM data request your European customer sends you is not a form to fill. It is a technical specification requiring verified embedded carbon calculations.
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+              The CBAM data request from your EU buyer is not a questionnaire. It is a technical specification requiring verified embedded carbon calculations.
             </p>
           </div>
-          <span class="text-brand-green text-sm font-semibold flex items-center gap-1">Read preview &rarr;</span>
+          <span class="text-xs font-bold text-brand-green flex items-center gap-1">Read article &rarr;</span>
         </article>
 
-        <article class="bg-white border border-brand-border rounded-xl p-8 flex flex-col justify-between hover:border-brand-green transition-all card-lift">
+        <article class="blog-card ccts bg-brand-bgAlt border border-brand-border rounded-xl p-6 flex flex-col justify-between card-lift">
           <div>
-            <div class="flex items-center justify-between mb-5">
-              <span class="bg-green-100 text-green-700 font-bold text-xs px-2.5 py-1 rounded-full uppercase tracking-wider">CCTS</span>
-              <span class="text-xs text-brand-muted">Coming soon</span>
+            <div class="flex items-center justify-between mb-4">
+              <span class="bg-emerald-100 text-emerald-800 font-bold text-[10px] px-2.5 py-1 rounded-full uppercase">CCTS</span>
+              <span class="text-[10px] text-brand-muted">July 2026</span>
             </div>
-            <h3 class="headline-font text-xl font-bold text-brand-text mb-4 leading-snug">
-              The difference between energy accounting and carbon accounting: why it matters for your first MRV submission
+            <h3 class="headline-font text-lg font-bold mb-3">
+              The difference between energy accounting and carbon accounting in Indian industrial plants
             </h3>
-            <p class="text-brand-muted text-sm leading-relaxed mb-6">
-              Indian industrial companies know how to measure energy. CCTS requires something different. Here is exactly what changes.
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+              Indian industrial companies know energy monitoring. CCTS requires greenhouse gas intensity accounting. Here is what changes for your plant.
             </p>
           </div>
-          <span class="text-brand-green text-sm font-semibold flex items-center gap-1">Read preview &rarr;</span>
+          <span class="text-xs font-bold text-brand-green flex items-center gap-1">Read article &rarr;</span>
         </article>
 
-        <article class="bg-white border border-brand-border rounded-xl p-8 flex flex-col justify-between hover:border-brand-green transition-all card-lift">
+        <article class="blog-card brsr bg-brand-bgAlt border border-brand-border rounded-xl p-6 flex flex-col justify-between card-lift">
           <div>
-            <div class="flex items-center justify-between mb-5">
-              <span class="bg-amber-100 text-amber-700 font-bold text-xs px-2.5 py-1 rounded-full uppercase tracking-wider">BRSR</span>
-              <span class="text-xs text-brand-muted">Coming soon</span>
+            <div class="flex items-center justify-between mb-4">
+              <span class="bg-amber-100 text-amber-800 font-bold text-[10px] px-2.5 py-1 rounded-full uppercase">BRSR</span>
+              <span class="text-[10px] text-brand-muted">June 2026</span>
             </div>
-            <h3 class="headline-font text-xl font-bold text-brand-text mb-4 leading-snug">
-              Three things wrong with most BRSR Core reports: how to fix them before your assurance provider does
+            <h3 class="headline-font text-lg font-bold mb-3">
+              Three errors in publicly filed BRSR Core reports — and how to fix them before assurance
             </h3>
-            <p class="text-brand-muted text-sm leading-relaxed mb-6">
-              The same three problems keep appearing across publicly available BRSR reports. All three are fixable. None of them are being fixed.
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+              The same three calculation errors keep appearing in listed company filings. All three are easily fixed before your assurance audit.
             </p>
           </div>
-          <span class="text-brand-green text-sm font-semibold flex items-center gap-1">Read preview &rarr;</span>
+          <span class="text-xs font-bold text-brand-green flex items-center gap-1">Read article &rarr;</span>
         </article>
+
+        <article class="blog-card csrd updates bg-brand-bgAlt border border-brand-border rounded-xl p-6 flex flex-col justify-between card-lift">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="bg-purple-100 text-purple-800 font-bold text-[10px] px-2.5 py-1 rounded-full uppercase">CSRD</span>
+              <span class="text-[10px] text-brand-muted">May 2026</span>
+            </div>
+            <h3 class="headline-font text-lg font-bold mb-3">
+              CSRD scope expansion: what Indian multinationals with European subsidiaries must prepare
+            </h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+              How non-EU ultimate parent companies can use BRSR disclosures to streamline European ESRS compliance.
+            </p>
+          </div>
+          <span class="text-xs font-bold text-brand-green flex items-center gap-1">Read article &rarr;</span>
+        </article>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ================================================================
+     PAGE 7: CONTACT
+================================================================ -->
+<section id="page-contact" class="page-view">
+
+  <div class="bg-white py-16 md:py-24 border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="max-w-2xl mb-12">
+        <p class="text-brand-green font-bold tracking-wider text-xs uppercase mb-2">Get In Touch</p>
+        <h1 class="headline-font text-4xl sm:text-6xl font-bold mb-4">Let us talk.</h1>
+        <p class="text-brand-muted text-base leading-relaxed">
+          Whether you are an Indian manufacturer facing a CBAM data request, a listed company preparing for BRSR assurance, a European company needing verified carbon data from your Indian supply chain, or an individual wanting to understand this market better — the first conversation is free.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        
+        <!-- Left: Details & Engagement Options -->
+        <div class="space-y-8">
+          <div class="bg-brand-bgAlt border border-brand-border rounded-xl p-6 space-y-4 text-xs">
+            <div>
+              <div class="font-bold text-brand-text uppercase text-[10px] tracking-wider mb-1">Direct Contact</div>
+              <a href="mailto:hello@decarbonly.com" class="text-sm font-bold text-brand-green hover:underline">hello@decarbonly.com</a>
+            </div>
+            <div>
+              <div class="font-bold text-brand-text uppercase text-[10px] tracking-wider mb-1">Offices</div>
+              <p class="text-brand-muted font-medium">India &amp; France</p>
+            </div>
+            <div>
+              <div class="font-bold text-brand-text uppercase text-[10px] tracking-wider mb-1">Response Time</div>
+              <p class="text-brand-muted">Within 24 hours. If your deadline is urgent, please mention it in your message.</p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <h3 class="font-bold text-sm uppercase tracking-wider text-brand-muted">Three Ways To Engage</h3>
+            
+            <div class="border border-brand-border rounded-xl p-5 bg-white">
+              <h4 class="font-bold text-sm text-brand-text mb-1">1. Quick Question</h4>
+              <p class="text-xs text-brand-muted">Email us directly about your CBAM or CCTS exposure for a quick, specific answer within 24 hours.</p>
+            </div>
+
+            <div class="border border-brand-border rounded-xl p-5 bg-white">
+              <h4 class="font-bold text-sm text-brand-text mb-1">2. Scoping Call (30 min, Free)</h4>
+              <p class="text-xs text-brand-muted">Tell us your situation. We tell you what you need and whether Decarbonly is the right fit. No pitch.</p>
+            </div>
+
+            <div class="border border-brand-border rounded-xl p-5 bg-white">
+              <h4 class="font-bold text-sm text-brand-text mb-1">3. Full Advisory Engagement</h4>
+              <p class="text-xs text-brand-muted">After a scoping call, we send a proposal with a clear scope, timeline, and fixed fee.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="bg-white border border-brand-border rounded-2xl p-8 shadow-sm">
+          <form onsubmit="handleContactSubmit(event)" class="space-y-4 text-xs">
+            <div>
+              <label class="block font-bold text-brand-text mb-1.5 uppercase text-[10px]">Your Name</label>
+              <input type="text" required placeholder="Full Name">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-brand-text mb-1.5 uppercase text-[10px]">Work Email</label>
+                <input type="email" required placeholder="name@company.com">
+              </div>
+              <div>
+                <label class="block font-bold text-brand-text mb-1.5 uppercase text-[10px]">Company Name</label>
+                <input type="text" required placeholder="Company Name">
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-bold text-brand-text mb-1.5 uppercase text-[10px]">Industrial Sector</label>
+              <select required>
+                <option value="" disabled selected>Select your sector</option>
+                <option value="Cement">Cement</option>
+                <option value="Steel">Steel</option>
+                <option value="Aluminium">Aluminium</option>
+                <option value="Fertilisers">Fertilisers</option>
+                <option value="Textiles">Textiles</option>
+                <option value="Petrochemicals">Petrochemicals</option>
+                <option value="Other Industry">Other Industry / Service</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-bold text-brand-text mb-1.5 uppercase text-[10px]">Primary Regulation / Focus</label>
+              <select required>
+                <option value="" disabled selected>Select primary topic</option>
+                <option value="CBAM Support">CBAM Support</option>
+                <option value="CCTS Compliance">CCTS Compliance</option>
+                <option value="BRSR Reporting">BRSR Reporting</option>
+                <option value="ESG / CSRD">ESG / CSRD</option>
+                <option value="Carbon Market Education">Carbon Market Education</option>
+                <option value="General Inquiry">General Inquiry</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-bold text-brand-text mb-1.5 uppercase text-[10px]">Message &amp; Timeline</label>
+              <textarea rows="4" required placeholder="Tell us about your requirements or specific deadlines..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-brand-green hover:bg-brand-greenHover text-white font-bold py-3.5 rounded-lg transition-all text-sm">
+              Send message
+            </button>
+          </form>
+        </div>
 
       </div>
     </div>
@@ -1222,199 +1669,319 @@
 <!-- ================================================================
      FOOTER
 ================================================================ -->
-<footer class="bg-brand-text text-white pt-20 pb-12">
+<footer class="bg-brand-black text-white py-16 border-t border-brand-darkBorder text-xs">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
-      <div class="md:col-span-5 space-y-4">
-        <div class="flex items-center gap-3">
-          <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none">
-            <path d="M 28 50 A 13 13 0 1 0 28 76 A 13 13 0 0 0 28 50 Z M 41 24 L 41 76" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-            <path d="M 75 51 A 14 14 0 1 0 75 73" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
-            <path d="M 70 65 C 85 62 96 74 96 74 C 96 74 81 83 70 77 Z" fill="#00C070"/>
-            <path d="M 72 73 C 82 72 90 74 90 74" stroke="#080A09" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <span class="headline-font text-xl font-bold">
-            <span class="text-brand-green">De</span>carbonly
-          </span>
-        </div>
-        <p class="text-sm text-white/50 max-w-xs">Bridging India and Europe on Carbon, ESG and Climate Compliance.</p>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      
+      <div class="space-y-3 md:col-span-1">
+        <span class="headline-font text-2xl font-bold">
+          <span class="text-brand-green">De</span>carbonly
+        </span>
+        <p class="text-brand-muted leading-relaxed">
+          Carbon and ESG Intelligence for India and Cross-Border European Compliance.
+        </p>
+        <p class="text-[11px] text-brand-muted">Offices in India &amp; France.</p>
       </div>
 
-      <div class="md:col-span-7 grid grid-cols-3 gap-8">
-        <div>
-          <h4 class="text-xs uppercase tracking-wider font-bold text-white/60 mb-4">Company</h4>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="#about" class="text-white/50 hover:text-white transition-colors">About</a></li>
-            <li><a href="#solutions" class="text-white/50 hover:text-white transition-colors">Solutions</a></li>
-            <li><a href="#blog" class="text-white/50 hover:text-white transition-colors">Blog</a></li>
-            <li><a href="#contact" class="text-white/50 hover:text-white transition-colors">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-xs uppercase tracking-wider font-bold text-white/60 mb-4">Solutions</h4>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="#solution-cbam" class="text-white/50 hover:text-white transition-colors">CBAM Support</a></li>
-            <li><a href="#solution-ccts" class="text-white/50 hover:text-white transition-colors">CCTS Compliance</a></li>
-            <li><a href="#solution-brsr" class="text-white/50 hover:text-white transition-colors">BRSR Reporting</a></li>
-            <li><a href="#solution-esg" class="text-white/50 hover:text-white transition-colors">ESG Solutions</a></li>
-            <li><a href="#solution-education" class="text-white/50 hover:text-white transition-colors">Education</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-xs uppercase tracking-wider font-bold text-white/60 mb-4">Connect</h4>
-          <ul class="space-y-2.5 text-sm">
-            <li><a href="mailto:hello@decarbonly.com" class="text-white/50 hover:text-white transition-colors">hello@decarbonly.com</a></li>
-            <li><a href="https://www.linkedin.com/company/decarbonly/" target="_blank" rel="noopener noreferrer" class="text-white/50 hover:text-white transition-colors">LinkedIn Page</a></li>
-            <li><a href="#contact" class="text-white/50 hover:text-white transition-colors">Book a Call</a></li>
-            <li><button onclick="openModal('guide-modal')" class="text-white/50 hover:text-white transition-colors text-left">CBAM Guide</button></li>
-          </ul>
-        </div>
+      <div>
+        <div class="font-bold uppercase tracking-wider text-white mb-3">Navigation</div>
+        <ul class="space-y-2 text-brand-muted">
+          <li><a href="#home" onclick="navigateTo('home')" class="hover:text-white">Home</a></li>
+          <li><a href="#solutions" onclick="navigateTo('solutions')" class="hover:text-white">Solutions</a></li>
+          <li><a href="#sectors" onclick="navigateTo('sectors')" class="hover:text-white">Sectors</a></li>
+          <li><a href="#resources" onclick="navigateTo('resources')" class="hover:text-white">Resources</a></li>
+          <li><a href="#blog" onclick="navigateTo('blog')" class="hover:text-white">Insights</a></li>
+          <li><a href="#about" onclick="navigateTo('about')" class="hover:text-white">About</a></li>
+        </ul>
       </div>
+
+      <div>
+        <div class="font-bold uppercase tracking-wider text-white mb-3">Solutions</div>
+        <ul class="space-y-2 text-brand-muted">
+          <li><a href="#solutions" onclick="navigateTo('solutions', 'solution-cbam')" class="hover:text-white">CBAM Support</a></li>
+          <li><a href="#solutions" onclick="navigateTo('solutions', 'solution-ccts')" class="hover:text-white">CCTS Compliance</a></li>
+          <li><a href="#solutions" onclick="navigateTo('solutions', 'solution-brsr')" class="hover:text-white">BRSR Reporting</a></li>
+          <li><a href="#solutions" onclick="navigateTo('solutions', 'solution-esg')" class="hover:text-white">ESG &amp; CSRD</a></li>
+          <li><a href="#solutions" onclick="navigateTo('solutions', 'solution-education')" class="hover:text-white">Education</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="font-bold uppercase tracking-wider text-white mb-3">Contact &amp; Legal</div>
+        <ul class="space-y-2 text-brand-muted">
+          <li><a href="mailto:hello@decarbonly.com" class="hover:text-white">hello@decarbonly.com</a></li>
+          <li><a href="#contact" onclick="navigateTo('contact')" class="hover:text-white">Book Scoping Call</a></li>
+          <li class="pt-2 text-[11px] text-brand-muted">Independent Advisory. No Sponsored Content. No Investment Advice.</li>
+        </ul>
+      </div>
+
     </div>
 
-    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/30 gap-4">
-      <p>2026 Decarbonly. All rights reserved.</p>
+    <div class="border-t border-brand-darkBorder pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-brand-muted">
+      <div>&copy; 2026 Decarbonly. All rights reserved.</div>
+      <div>Carbon &amp; ESG Intelligence Platform</div>
     </div>
   </div>
 </footer>
 
 
-<!-- CBAM Guide Modal -->
+<!-- ================================================================
+     MODAL: FREE CBAM GUIDE
+================================================================ -->
 <div id="guide-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
   <div class="bg-white border border-brand-border p-8 rounded-2xl max-w-md w-full relative shadow-2xl">
-    <button onclick="closeModal('guide-modal')" class="absolute top-4 right-4 text-brand-muted hover:text-brand-text w-8 h-8 flex items-center justify-center rounded-full hover:bg-brand-bgAlt transition-all">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </button>
-    <div class="w-12 h-12 bg-brand-greenLight rounded-2xl flex items-center justify-center mb-5">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#006640" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-    </div>
-    <h3 class="headline-font text-2xl font-bold text-brand-text mb-2">Free CBAM Guide</h3>
-    <p class="text-sm text-brand-muted mb-6">Our practical breakdown on EU CBAM obligations for Indian exporters: what to calculate, verify, and declare before September 2027.</p>
-    <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+    <button onclick="closeModal('guide-modal')" class="absolute top-4 right-4 text-brand-muted hover:text-brand-text text-xl">&times;</button>
+    <h3 class="headline-font text-2xl font-bold mb-2">Download Free Guide</h3>
+    <p class="text-xs text-brand-muted mb-6">Enter your details to receive the comprehensive guide and circular updates in your inbox.</p>
+    
+    <form onsubmit="handleModalSubmit(event)" class="space-y-4 text-xs">
       <div>
-        <label class="block text-xs uppercase text-brand-muted mb-1.5 font-semibold">Work Email</label>
+        <label class="block font-bold mb-1">Work Email</label>
         <input type="email" required placeholder="name@company.com">
       </div>
       <div>
-        <label class="block text-xs uppercase text-brand-muted mb-1.5 font-semibold">Company Name</label>
-        <input type="text" required placeholder="Company name">
+        <label class="block font-bold mb-1">Company Name</label>
+        <input type="text" required placeholder="Company Name">
       </div>
-      <button type="submit" class="w-full bg-brand-green hover:bg-brand-greenHover text-white font-bold py-3 rounded-lg transition-all">
-        Get free guide
+      <button type="submit" class="w-full bg-brand-green hover:bg-brand-greenHover text-white font-bold py-3 rounded-lg">
+        Send me the guide
       </button>
     </form>
   </div>
 </div>
 
 
+<!-- ================================================================
+     JAVASCRIPT ROUTING & INTERACTION ENGINE
+================================================================ -->
 <script>
-  // Routing
-  function navigate() {
-    var hash = window.location.hash.replace('#', '') || 'home';
-    var pageId = hash;
-    var targetSectionId = null;
+  // Sector Data Objects
+  const sectorData = {
+    cement: {
+      title: "Cement Sector",
+      picture: "India's cement sector is one of the initial sectors under CCTS. Emission intensity targets are set at the facility level based on baseline data. Process emissions from clinker calcination account for ~60% of emissions, making data quality paramount for CCTS compliance.",
+      cbam: "CBAM application expanding to cement derivatives and clinker imports. Exporters with EU subsidiaries face strict reporting standards.",
+      brsr: "Top listed cement firms face mandatory BRSR Core reasonable assurance covering water, dust, process GHG emissions, and supply chain material issues.",
+      numbers: [
+        { label: "0.65–0.85 tCO2/t", desc: "Average emission intensity per tonne of cement produced in India." },
+        { label: "60%", desc: "Process emissions from calcination (hard-to-abate baseline)." },
+        { label: "Oct 2026", desc: "CCTS mandatory trading window launch for cement plants." }
+      ],
+      services: "Decarbonly builds facility-level MRV methodologies, calculates process vs combustion fuel emissions, structures BRSR Core data, and prepares CBAM declarations."
+    },
+    steel: {
+      title: "Steel Sector",
+      picture: "Steel is India's most heavily exposed export sector under EU CBAM. BF-BOF production routes face substantial carbon price adjustments when entering Europe compared to lower-intensity EU EAF routes.",
+      cbam: "CBAM cost estimate: $69–173 per tonne of steel exported to EU by 2034 if primary verified data is not supplied.",
+      brsr: "Mandatory value chain emissions accounting for top steelmakers and integrated producers under SEBI guidelines.",
+      numbers: [
+        { label: "2.1–2.6 tCO2/t", desc: "Average BF-BOF route emission intensity in India." },
+        { label: "54%", desc: "Indian BF-BOF emission intensity above EU ETS benchmark." },
+        { label: "Sep 2027", desc: "First CBAM financial declaration deadline for EU steel importers." }
+      ],
+      services: "Decarbonly calculates precursor embedded carbon, establishes scrap/pig iron boundary metrics, and coordinates ISO 14065 verifier sign-offs."
+    },
+    aluminium: {
+      title: "Aluminium Sector",
+      picture: "Aluminium smelting is energy-intensive. CBAM explicitly includes Scope 2 indirect emissions for aluminium products, giving coal-reliant smelters a significant financial liability.",
+      cbam: "Coal-powered smelters face a $1,000+ per tonne CBAM disadvantage versus hydro-powered competitors entering the EU.",
+      brsr: "Deep scrutiny on power purchase agreements (PPAs), captive thermal power, and renewable energy certificates (RECs).",
+      numbers: [
+        { label: "14–18 tCO2/t", desc: "Average emissions intensity for coal-grid aluminium smelting." },
+        { label: "$1,000+/t", desc: "Estimated CBAM penalty differential between captive coal vs hydro." },
+        { label: "Scope 2", desc: "Explicitly included in EU CBAM calculation methodology for aluminium." }
+      ],
+      services: "Decarbonly models PPA decarbonization impact on CBAM bill, verifies captive power emission factors, and handles CCTS intensity filings."
+    },
+    fertilisers: {
+      title: "Fertilisers Sector",
+      picture: "Ammonia and nitric acid production are core CBAM covered goods. Natural gas feedstock and West Asia LNG reliance create specific energy accounting nuances under CCTS and BEE rules.",
+      cbam: "Direct application to imported ammonia and urea; green hydrogen transition required to avoid long-term tariffs.",
+      brsr: "High materiality on environmental impact, chemical safety, and agricultural Scope 3 value chains.",
+      numbers: [
+        { label: "86%", desc: "India's LNG dependence for fertiliser feedstock." },
+        { label: "2.1 tCO2/t", desc: "Average emission intensity for ammonia production." },
+        { label: "HPO Mandates", desc: "Hydrogen Purchase Obligations landing alongside CCTS targets." }
+      ],
+      services: "Decarbonly conducts ammonia process GHG audits, models HPO compliance costs, and manages cross-border CBAM reporting."
+    },
+    textiles: {
+      title: "Textiles Sector",
+      picture: "Textiles are in CCTS scope. European brand requirements, Eco-design regulations, and EU Digital Product Passports demand full supply chain traceability from spinning to dyeing.",
+      cbam: "Potential inclusion in future CBAM phases; current focus is on EU buyer Scope 3 vendor requirements.",
+      brsr: "Mandatory assurance on water usage, chemical discharge, human rights, and labor indicators under BRSR Core.",
+      numbers: [
+        { label: "490+", desc: "Facilities including textile units governed under CCTS." },
+        { label: "Tier 1–4", desc: "Traceability required for EU supply chain compliance." },
+        { label: "100%", desc: "Water and effluent disclosure assurance required under BRSR." }
+      ],
+      services: "Decarbonly maps wet processing unit emissions, sets up energy-to-carbon accounting, and structures brand compliance data."
+    },
+    petrochemicals: {
+      title: "Petrochemicals Sector",
+      picture: "Complex CCTS plant boundary definitions. High EU export exposure in specialty chemicals, polymers, and organic inputs. Indian MNCs face CSRD compliance for EU subsidiaries.",
+      cbam: "Expanding coverage under review by EU Parliament for organic chemicals and polymers.",
+      brsr: "High materiality around circularity, plastic waste management, and Scope 1 direct process emissions.",
+      numbers: [
+        { label: "Multi-Refinery", desc: "Complex CCTS boundary allocation rules for integrated plants." },
+        { label: "CSRD Scope", desc: "Applies to Indian chemical MNCs with significant EU revenue." },
+        { label: "Form A/B", desc: "Mandatory BEE filings under domestic CCTS." }
+      ],
+      services: "Decarbonly resolves complex boundary definition challenges, prepares CSRD gap analyses, and builds auditable GHG inventories."
+    }
+  };
 
-    if (hash.startsWith('solution-')) {
-      pageId = 'solutions';
-      targetSectionId = hash;
+  // Render Sector Content
+  function renderSectorContent(secKey) {
+    const data = sectorData[secKey] || sectorData.cement;
+    const container = document.getElementById('sector-content-area');
+    
+    container.innerHTML = `
+      <div class="bg-white border border-brand-border rounded-2xl p-8 shadow-sm">
+        <div class="inline-block bg-brand-greenLight text-brand-greenDark font-bold text-xs px-3 py-1 rounded-full mb-4">
+          Sector Spotlight: ${data.title}
+        </div>
+        <h2 class="headline-font text-3xl font-bold mb-6">${data.title} Compliance Landscape</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8 text-xs text-brand-muted leading-relaxed">
+          <div>
+            <strong class="text-brand-text block text-sm mb-2">CCTS Regulatory Picture</strong>
+            ${data.picture}
+          </div>
+          <div>
+            <strong class="text-brand-text block text-sm mb-2">CBAM Exposure</strong>
+            ${data.cbam}
+          </div>
+          <div>
+            <strong class="text-brand-text block text-sm mb-2">BRSR &amp; Assurance Requirements</strong>
+            ${data.brsr}
+          </div>
+        </div>
+
+        <!-- By the Numbers -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 bg-brand-bgAlt p-6 rounded-xl border border-brand-border">
+          ${data.numbers.map(n => `
+            <div>
+              <div class="headline-font text-2xl font-extrabold text-brand-green mb-1">${n.label}</div>
+              <div class="text-[11px] text-brand-muted">${n.desc}</div>
+            </div>
+          `).join('')}
+        </div>
+
+        <div class="border-t border-brand-border pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div class="text-xs text-brand-muted max-w-xl">
+            <strong class="text-brand-text">What Decarbonly does for ${data.title}:</strong> ${data.services}
+          </div>
+          <a href="#contact" onclick="navigateTo('contact')" class="bg-brand-green hover:bg-brand-greenHover text-white font-bold text-xs px-6 py-3 rounded-lg flex-shrink-0 transition-all">
+            Get ${data.title} Advisory
+          </a>
+        </div>
+      </div>
+    `;
+
+    // Update active tab button style
+    document.querySelectorAll('.sector-btn').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.getElementById(`btn-sec-${secKey}`);
+    if (activeBtn) activeBtn.classList.add('active');
+  }
+
+  function showSector(secKey) {
+    renderSectorContent(secKey);
+  }
+
+  function navigateToSector(secKey) {
+    navigateTo('sectors');
+    showSector(secKey);
+  }
+
+  // SPA Routing Engine
+  function navigateTo(pageId, sectionId = null) {
+    document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+    
+    const targetPage = document.getElementById(`page-${pageId}`);
+    if (targetPage) {
+      targetPage.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    var validPages = ['home', 'about', 'solutions', 'contact', 'blog'];
-    if (validPages.indexOf(pageId) === -1) pageId = 'home';
-
-    document.querySelectorAll('.page-view').forEach(function(v) { v.classList.remove('active'); });
-
-    var target = document.getElementById('page-' + pageId);
-    if (target) target.classList.add('active');
-
-    document.querySelectorAll('.nav-btn').forEach(function(b) {
-      var pg = b.getAttribute('data-page');
-      if (pg === pageId) {
-        b.classList.add('text-brand-green');
-        b.classList.remove('text-brand-muted');
+    // Update nav active link styles
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+      if (btn.getAttribute('data-page') === pageId) {
+        btn.classList.add('text-brand-green', 'font-bold');
       } else {
-        b.classList.remove('text-brand-green');
-        b.classList.add('text-brand-muted');
+        btn.classList.remove('text-brand-green', 'font-bold');
       }
     });
 
-    var mob = document.getElementById('mobile-menu');
-    if (mob) mob.classList.add('hidden');
-
-    if (targetSectionId) {
-      setTimeout(function() {
-        var el = document.getElementById(targetSectionId);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 60);
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    // If sub-section requested
+    if (sectionId) {
+      setTimeout(() => {
+        const elem = document.getElementById(sectionId);
+        if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     }
   }
 
-  window.addEventListener('hashchange', navigate);
-  window.addEventListener('load', navigate);
-
-  // Mobile menu
+  // Mobile Menu Toggle
   function toggleMobileMenu() {
-    document.getElementById('mobile-menu').classList.toggle('hidden');
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
   }
 
-  // Solutions dropdown (mobile click)
-  function toggleDropdown(e) {
-    var menu = document.getElementById('solutionsMenu');
-    if (window.innerWidth < 768) {
-      e.preventDefault();
-      menu.classList.toggle('open');
-    }
+  // Modal Handlers
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
   }
 
-  function closeDropdown() {
-    document.getElementById('solutionsMenu').classList.remove('open');
-  }
-
-  // Close dropdown when clicking outside
-  document.addEventListener('click', function(e) {
-    var wrapper = e.target.closest('.dropdown-wrapper');
-    if (!wrapper) closeDropdown();
-  });
-
-  // Forms
-  function handleFormSubmit(e) {
+  // Form Submissions
+  function handleSubscribe(e) {
     e.preventDefault();
-    document.getElementById('contact-form').classList.add('hidden');
-    document.getElementById('form-success').classList.remove('hidden');
+    alert('Thank you for subscribing to The Decarbonly Brief.');
+    e.target.reset();
   }
-
-  function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
-  function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
-
   function handleModalSubmit(e) {
     e.preventDefault();
-    alert('Thank you. The CBAM guide link has been sent to your email.');
+    alert('Thank you. The guide has been sent to your email.');
     closeModal('guide-modal');
+    e.target.reset();
   }
-</script>
-<!-- Lightweight Scroll-Reveal Script -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const observerOptions = {
-      threshold: 0.15,
-      rootMargin: "0px 0px -50px 0px"
-    };
+  function handleContactSubmit(e) {
+    e.preventDefault();
+    alert('Thank you for your message. Decarbonly team will respond within 24 hours.');
+    e.target.reset();
+  }
 
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
+  // Blog Category Filter
+  function filterBlog(cat) {
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
 
-    // Target all elements with the 'reveal' class
-    document.querySelectorAll(".reveal").forEach(element => {
-      observer.observe(element);
+    const cards = document.querySelectorAll('.blog-card');
+    cards.forEach(card => {
+      if (cat === 'all' || card.classList.contains(cat)) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
     });
+  }
+
+  // Init
+  window.addEventListener('DOMContentLoaded', () => {
+    renderSectorContent('cement');
+    
+    // Hash based routing on page load
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      if (['home', 'about', 'solutions', 'sectors', 'resources', 'blog', 'contact'].includes(hash)) {
+        navigateTo(hash);
+      } else if (sectorData[hash]) {
+        navigateToSector(hash);
+      }
+    }
   });
 </script>
 
