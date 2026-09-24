@@ -249,8 +249,9 @@
 <section id="page-home" class="page-view active">
 
   <!-- Section 1: Hero -->
-  <div class="bg-white pt-12 pb-12 md:pt-20 md:pb-16 border-b border-brand-border overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6">
+  <div class="pt-12 pb-8 md:pt-20 md:pb-16 border-b border-brand-darkBorder overflow-hidden" style="background:#070D09;position:relative;">
+  <canvas id="hero-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
+    <div class="max-w-7xl mx-auto px-6" style="position:relative;z-index:1;"> 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         <div>
@@ -2067,6 +2068,305 @@
       }
     }
   });
+  /* ================================================================
+   DECARBONLY HERO CANVAS ANIMATION
+   Carbon molecule network + India-Europe data flow
+   Paste this just before the closing </script> tag
+================================================================ */
+
+(function() {
+
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  const CONFIG = {
+    bgColor:            '#070D09',
+    primaryColor:       '#00C070',
+    primaryDim:         'rgba(0,192,112,',
+    secondaryColor:     '#C49A3C',
+    secondaryDim:       'rgba(196,154,60,',
+    particleCount:      55,
+    connectionDist:     145,
+    particleSpeed:      0.35,
+    flowSpeed:          0.9,
+    hexSize:            72,
+    flowCount:          22
+  };
+
+  // ---- RESIZE ----
+  function resize() {
+    const parent = canvas.parentElement;
+    canvas.width  = parent.offsetWidth;
+    canvas.height = parent.offsetHeight;
+  }
+  resize();
+
+  let resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      resize();
+      initAll();
+    }, 150);
+  });
+
+  // ---- HEXAGONAL GRID ----
+  function drawHexGrid(time) {
+    const s  = CONFIG.hexSize;
+    const w  = s * 1.5;
+    const h  = Math.sqrt(3) * s;
+    const pulse = 0.025 + Math.sin(time * 0.0004) * 0.012;
+
+    ctx.lineWidth = 1;
+
+    let col = 0;
+    for (let x = -s; x < canvas.width + s; x += w, col++) {
+      for (let y = -s; y < canvas.height + s; y += h) {
+        const offset = (col % 2 === 0) ? 0 : h / 2;
+        const cx = x, cy = y + offset;
+        const dist = Math.sqrt(
+          Math.pow(cx - canvas.width  * 0.5, 2) +
+          Math.pow(cy - canvas.height * 0.5, 2)
+        );
+        const maxDist = Math.sqrt(
+          Math.pow(canvas.width, 2) + Math.pow(canvas.height, 2)
+        ) * 0.5;
+        const proximity = 1 - dist / maxDist;
+        const alpha = (pulse + proximity * 0.025) * 0.9;
+
+        ctx.strokeStyle = CONFIG.primaryDim + alpha.toFixed(3) + ')';
+        hexPath(cx, cy, s);
+        ctx.stroke();
+      }
+    }
+  }
+
+  function hexPath(x, y, s) {
+    ctx.beginPath();
+    for (let i = 0; i < 6; i++) {
+      const a = (Math.PI / 3) * i + Math.PI / 6;
+      const px = x + s * Math.cos(a);
+      const py = y + s * Math.sin(a);
+      if (i === 0) ctx.moveTo(px, py);
+      else ctx.lineTo(px, py);
+    }
+    ctx.closePath();
+  }
+
+  // ---- PARTICLES ----
+  let particles = [];
+
+  function Particle() {
+    this.respawn = function() {
+      this.x     = Math.random() * canvas.width;
+      this.y     = Math.random() * canvas.height;
+      this.vx    = (Math.random() - 0.5) * CONFIG.particleSpeed;
+      this.vy    = (Math.random() - 0.5) * CONFIG.particleSpeed;
+      this.size  = Math.random() * 2.2 + 0.8;
+      this.base  = Math.random() * 0.5 + 0.15;
+      this.phase = Math.random() * Math.PI * 2;
+      this.rate  = Math.random() * 0.025 + 0.008;
+      this.gold  = Math.random() < 0.07;
+    };
+    this.respawn();
+
+    this.update = function() {
+      this.x += this.vx;
+      this.y += this.vy;
+      this.phase += this.rate;
+      if (this.x < -10) this.x = canvas.width  + 10;
+      if (this.x > canvas.width  + 10) this.x = -10;
+      if (this.y < -10) this.y = canvas.height + 10;
+      if (this.y > canvas.height + 10) this.y = -10;
+    };
+
+    this.draw = function() {
+      const r = this.size + Math.sin(this.phase) * 0.6;
+      const a = this.base + Math.sin(this.phase) * 0.12;
+
+      if (this.gold) {
+        // Glowing amber node — regulatory highlight
+        const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, r * 5);
+        g.addColorStop(0, CONFIG.secondaryDim + (a * 0.9).toFixed(3) + ')');
+        g.addColorStop(1, CONFIG.secondaryDim + '0)');
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, r * 5, 0, Math.PI * 2);
+        ctx.fillStyle = g;
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, r, 0, Math.PI * 2);
+        ctx.fillStyle = CONFIG.secondaryDim + a.toFixed(3) + ')';
+        ctx.fill();
+      } else {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, r, 0, Math.PI * 2);
+        ctx.fillStyle = CONFIG.primaryDim + a.toFixed(3) + ')';
+        ctx.fill();
+      }
+    };
+  }
+
+  // ---- FLOW PARTICLES (India → Europe directional stream) ----
+  let flowParticles = [];
+
+  function FlowParticle() {
+    this.respawn = function(initial) {
+      if (initial) {
+        this.x = Math.random() * canvas.width;
+      } else {
+        this.x = -8;
+      }
+      this.y     = Math.random() * canvas.height;
+      this.speed = CONFIG.flowSpeed * (0.6 + Math.random() * 0.8);
+      this.r     = Math.random() * 1.4 + 0.4;
+      this.base  = Math.random() * 0.35 + 0.1;
+      this.wave  = Math.random() * 0.012 + 0.004;
+      this.wAmp  = Math.random() * 18 + 6;
+      this.wOff  = Math.random() * Math.PI * 2;
+      this.trail = [];
+      this.max   = Math.floor(Math.random() * 14 + 6);
+    };
+    this.respawn(true);
+
+    this.update = function() {
+      this.trail.push({ x: this.x, y: this.y });
+      if (this.trail.length > this.max) this.trail.shift();
+      this.x += this.speed;
+      this.y += Math.sin(this.x * this.wave + this.wOff) * 0.4;
+      if (this.x > canvas.width + 10) this.respawn(false);
+    };
+
+    this.draw = function() {
+      for (let i = 0; i < this.trail.length; i++) {
+        const t = i / this.trail.length;
+        ctx.beginPath();
+        ctx.arc(this.trail[i].x, this.trail[i].y, this.r * t, 0, Math.PI * 2);
+        ctx.fillStyle = CONFIG.primaryDim + (this.base * t * 0.8).toFixed(3) + ')';
+        ctx.fill();
+      }
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = CONFIG.primaryDim + this.base.toFixed(3) + ')';
+      ctx.fill();
+    };
+  }
+
+  // ---- CONNECTIONS ----
+  function drawConnections() {
+    const d = CONFIG.connectionDist;
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx  = particles[i].x - particles[j].x;
+        const dy  = particles[i].y - particles[j].y;
+        const dst = Math.sqrt(dx * dx + dy * dy);
+        if (dst < d) {
+          const alpha = (1 - dst / d) * 0.13;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = CONFIG.primaryDim + alpha.toFixed(3) + ')';
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  // ---- LABEL NODES (faint regulatory labels) ----
+  const labels = ['CCTS', 'CBAM', 'BRSR', 'CSRD', 'MRV', 'CCC', 'GHG'];
+  let labelNodes = [];
+
+  function initLabels() {
+    labelNodes = labels.map(function(text) {
+      return {
+        text:  text,
+        x:     canvas.width  * (0.1 + Math.random() * 0.8),
+        y:     canvas.height * (0.1 + Math.random() * 0.8),
+        phase: Math.random() * Math.PI * 2,
+        rate:  Math.random() * 0.008 + 0.003
+      };
+    });
+  }
+
+  function drawLabels() {
+    ctx.font = '600 11px "Source Sans 3", sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    labelNodes.forEach(function(n) {
+      n.phase += n.rate;
+      const a = 0.06 + Math.sin(n.phase) * 0.03;
+      ctx.fillStyle = CONFIG.primaryDim + a.toFixed(3) + ')';
+      ctx.fillText(n.text, n.x, n.y);
+    });
+  }
+
+  // ---- INIT ----
+  function initAll() {
+    const count = Math.min(CONFIG.particleCount, Math.floor(canvas.width / 18));
+    particles = [];
+    for (let i = 0; i < count; i++) {
+      particles.push(new Particle());
+    }
+
+    const fcount = Math.min(CONFIG.flowCount, Math.floor(canvas.width / 50));
+    flowParticles = [];
+    for (let i = 0; i < fcount; i++) {
+      flowParticles.push(new FlowParticle());
+    }
+
+    initLabels();
+  }
+
+  // ---- ANIMATE ----
+  let raf;
+  function animate(time) {
+    ctx.fillStyle = CONFIG.bgColor;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    drawHexGrid(time);
+
+    flowParticles.forEach(function(fp) { fp.update(); fp.draw(); });
+
+    drawConnections();
+
+    particles.forEach(function(p) { p.update(); p.draw(); });
+
+    drawLabels();
+
+    raf = requestAnimationFrame(animate);
+  }
+
+  // Only run when hero canvas is visible (page home)
+  function startStop() {
+    const heroPage = document.getElementById('page-home');
+    if (heroPage && heroPage.classList.contains('active')) {
+      if (!raf) {
+        initAll();
+        raf = requestAnimationFrame(animate);
+      }
+    } else {
+      if (raf) {
+        cancelAnimationFrame(raf);
+        raf = null;
+      }
+    }
+  }
+
+  // Watch for page navigation
+  window.addEventListener('hashchange', function() {
+    setTimeout(startStop, 100);
+  });
+
+  // Initial start
+  initAll();
+  raf = requestAnimationFrame(animate);
+
+})();
+/* ================================================================
+   END HERO CANVAS ANIMATION
+================================================================ */
 </script>
 
 </body>
